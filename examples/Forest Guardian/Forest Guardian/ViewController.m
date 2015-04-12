@@ -27,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *lat_longLabel;
 @property (weak, nonatomic) IBOutlet UILabel *tempLabel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *alertSymbol;
+
 @property (strong, nonatomic) NSMutableArray *placesList;
 
 @end
@@ -64,6 +66,10 @@
     [self setUpLocation];
     [self drawMapLayer];
     [self setUpGesture];
+    
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(animationToAlertSymbol) userInfo:nil repeats:YES];
+    NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
+    [runLoop addTimer:timer forMode:NSDefaultRunLoopMode];
     
     //[self searchVenues:@"A" withPositions:CLLocationCoordinate2DMake(-77.032458, 38.913175)];
 
@@ -235,6 +241,17 @@
     self.request = [_foursquare requestWithPath:@"venues/search" HTTPMethod:@"GET" parameters:parameters delegate:self];
     [_request start];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+}
+
+//Animation
+
+- (void)animationToAlertSymbol
+{
+    if (self.alertSymbol.hidden) {
+        [self.alertSymbol setHidden:NO];
+    } else {
+        [self.alertSymbol setHidden:YES];
+    }
 }
 
 
