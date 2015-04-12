@@ -17,6 +17,7 @@
 		7D7777B91AD9F9FF006671C3 /* ParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D7777B81AD9F9FF006671C3 /* ParseHelper.m */; };
 		7D7777BD1ADA244D006671C3 /* FeedControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D7777BC1ADA244D006671C3 /* FeedControllerViewController.m */; };
 		7DA3F9451ADA6CA9002D9B97 /* ReportCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA3F9441ADA6CA9002D9B97 /* ReportCellTableViewCell.m */; };
+		7DA3F9491ADA84D8002D9B97 /* Tiempo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA3F9481ADA84D8002D9B97 /* Tiempo.m */; };
 		9AC304D0E7E327A161C8E748 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FE5BAD6C5533485443DC3F /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,8 @@
 		7D7777BC1ADA244D006671C3 /* FeedControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedControllerViewController.m; sourceTree = "<group>"; };
 		7DA3F9431ADA6CA9002D9B97 /* ReportCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportCellTableViewCell.h; sourceTree = "<group>"; };
 		7DA3F9441ADA6CA9002D9B97 /* ReportCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportCellTableViewCell.m; sourceTree = "<group>"; };
+		7DA3F9471ADA84D8002D9B97 /* Tiempo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tiempo.h; sourceTree = "<group>"; };
+		7DA3F9481ADA84D8002D9B97 /* Tiempo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tiempo.m; sourceTree = "<group>"; };
 		F6FE5BAD6C5533485443DC3F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -97,6 +100,7 @@
 		7D77778F1AD9F825006671C3 /* Forest Guardian */ = {
 			isa = PBXGroup;
 			children = (
+				7DA3F9461ADA84A1002D9B97 /* Model */,
 				7D7777BA1ADA2414006671C3 /* Controllers */,
 				7D7777B61AD9F9AB006671C3 /* Backend */,
 				7D7777941AD9F825006671C3 /* AppDelegate.h */,
@@ -155,6 +159,15 @@
 				7DA3F9441ADA6CA9002D9B97 /* ReportCellTableViewCell.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		7DA3F9461ADA84A1002D9B97 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7DA3F9471ADA84D8002D9B97 /* Tiempo.h */,
+				7DA3F9481ADA84D8002D9B97 /* Tiempo.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		9D1BE841DC2EEB3F4D343D68 /* Frameworks */ = {
@@ -315,6 +328,7 @@
 				7D7777931AD9F825006671C3 /* main.m in Sources */,
 				7D7777BD1ADA244D006671C3 /* FeedControllerViewController.m in Sources */,
 				7D7777B91AD9F9FF006671C3 /* ParseHelper.m in Sources */,
+				7DA3F9491ADA84D8002D9B97 /* Tiempo.m in Sources */,
 				7DA3F9451ADA6CA9002D9B97 /* ReportCellTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

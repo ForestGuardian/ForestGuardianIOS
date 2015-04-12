@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Tiempo.h"
 
 
 @interface ViewController ()
@@ -68,6 +69,15 @@
     [self drawMapLayer];
     
     //[self searchVenues:@"A" withPositions:CLLocationCoordinate2DMake(-77.032458, 38.913175)];
+    
+    Tiempo *test = [[Tiempo alloc] init];
+    
+    [test buildTimeof:CLLocationCoordinate2DMake(-77.032458,38.913175) :^(Tiempo *responseObject, NSError *error) {
+        if (!error) {
+            NSLog(@"Tiempo: %@", responseObject.temp);
+        }
+    }];
+
 }
 
 - (void)didReceiveMemoryWarning {
