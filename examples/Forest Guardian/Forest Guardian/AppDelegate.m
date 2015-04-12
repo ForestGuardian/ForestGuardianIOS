@@ -23,8 +23,8 @@
     [Parse enableLocalDatastore];
     
     // Initialize Parse.
-    [Parse setApplicationId:@"iMN9plfb2i0cOcgKDlyVcNQsQqHBNvypaBsanN2k"
-                  clientKey:@"URKE6y99gmlGCRKm1Gs46xSvPk3knyGy50lQ8iut"];
+    [Parse setApplicationId:@"QwLUk4jDmnVqfQfxa0CQs0X7R3XhhzlckkflBChG"
+                  clientKey:@"9a2rUU3BmxRBj8BkizGBN237mKZnwG6ju58ZFKx5"];
     
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
