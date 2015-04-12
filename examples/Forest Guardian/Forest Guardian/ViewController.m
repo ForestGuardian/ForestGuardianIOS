@@ -23,12 +23,9 @@
 @property (weak, nonatomic) IBOutlet UIView *mainContainer;
 @property (weak, nonatomic) IBOutlet UISearchBar *placesSearch;
 @property (weak, nonatomic) IBOutlet UITableView *tableResults;
-@property (weak, nonatomic) IBOutlet UIView *switchesContainer;
-@property (weak, nonatomic) IBOutlet UIView *detailContainer;
 
-@property (weak, nonatomic) IBOutlet UILabel *lugarLabel;
-@property (weak, nonatomic) IBOutlet UILabel *coordenadasLabel;
-@property (weak, nonatomic) IBOutlet UILabel *brilloLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lat_longLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tempLabel;
 
 @property (strong, nonatomic) NSMutableArray *placesList;
 
@@ -64,19 +61,11 @@
     [_tableResults setDelegate:self];
     [_tableResults setDataSource:self];
     
-    [self setUpGesture];
     [self setUpLocation];
     [self drawMapLayer];
+    [self setUpGesture];
     
     //[self searchVenues:@"A" withPositions:CLLocationCoordinate2DMake(-77.032458, 38.913175)];
-    
-    Tiempo *test = [[Tiempo alloc] init];
-    
-    [test buildTimeof:CLLocationCoordinate2DMake(-77.032458,38.913175) :^(Tiempo *responseObject, NSError *error) {
-        if (!error) {
-            NSLog(@"Tiempo: %@", responseObject.temp);
-        }
-    }];
 
 }
 
@@ -97,6 +86,17 @@
     NSLog(@"You tapped at %f, %f",
           [self.mapView pixelToCoordinate:tapPoint].latitude,
           [self.mapView pixelToCoordinate:tapPoint].longitude);
+    [self.lat_longLabel setText:[NSString stringWithFormat:@"%f,%f", [self.mapView pixelToCoordinate:tapPoint].latitude, [self.mapView pixelToCoordinate:tapPoint].longitude]];
+    
+    Tiempo *hotSpot = [[Tiempo alloc] init];
+//    [hotSpot buildTimeof:CLLocationCoordinate2DMake([self.mapView pixelToCoordinate:tapPoint].latitude, [self.mapView pixelToCoordinate:tapPoint].longitude) :^(Tiempo *responseObject, NSError *error) {
+//        if (!error) {
+//            if (responseObject.temp) {
+//                NSLog(@"Temperatura: %@", responseObject.temp);
+//                [self.tempLabel setText:responseObject.temp];
+//            }
+//        }
+//    }];
 }
 
 - (void) setUpLocation
@@ -151,20 +151,6 @@
 }
 
 - (IBAction)onChangeButtonClicked:(id)sender {
-    if (!_state) {
-        [_placesSearch setHidden:YES];
-        [_tableResults setHidden:YES];
-        [_switchesContainer setHidden:YES];
-        [_detailContainer setHidden:NO];
-        _state = YES;
-    }
-    else {
-        [_placesSearch setHidden:NO];
-        [_tableResults setHidden:NO];
-        [_switchesContainer setHidden:NO];
-        [_detailContainer setHidden:YES];
-        _state = NO;
-    }
 }
 
 - (IBAction)returnFromReportFeed:(UIStoryboardSegue*)sender
