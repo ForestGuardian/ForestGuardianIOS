@@ -88,15 +88,78 @@
           [self.mapView pixelToCoordinate:tapPoint].longitude);
     [self.lat_longLabel setText:[NSString stringWithFormat:@"%f,%f", [self.mapView pixelToCoordinate:tapPoint].latitude, [self.mapView pixelToCoordinate:tapPoint].longitude]];
     
+    
+    
     Tiempo *hotSpot = [[Tiempo alloc] init];
-//    [hotSpot buildTimeof:CLLocationCoordinate2DMake([self.mapView pixelToCoordinate:tapPoint].latitude, [self.mapView pixelToCoordinate:tapPoint].longitude) :^(Tiempo *responseObject, NSError *error) {
-//        if (!error) {
-//            if (responseObject.temp) {
-//                NSLog(@"Temperatura: %@", responseObject.temp);
-//                [self.tempLabel setText:responseObject.temp];
-//            }
-//        }
-//    }];
+    
+    CLLocationDegrees latitude = [self.mapView pixelToCoordinate:tapPoint].latitude;
+    CLLocationDegrees longitude = [self.mapView pixelToCoordinate:tapPoint].longitude;
+    
+    [hotSpot buildTimeof:CLLocationCoordinate2DMake(latitude,longitude) :^(Tiempo *responseObject, NSError *error) {
+        if (!error) {
+            NSLog(@"Tiempo: %@", responseObject.temp);
+        }
+    }];
+    
+    [self drawFireLine:CGPointMake(tapPoint.x, tapPoint.y) withangle:-M_PI_2];
+    [self drawFireLine:CGPointMake(tapPoint.x, tapPoint.y+150) withangle:-M_PI_2];
+    [self drawFireLine:CGPointMake(tapPoint.x, tapPoint.y+300) withangle:-M_PI_2];
+    
+    [self drawFireLine:CGPointMake(tapPoint.x+20, tapPoint.y) withangle:-M_PI_2];
+    [self drawFireLine:CGPointMake(tapPoint.x+20, tapPoint.y+150) withangle:-M_PI_2];
+    [self drawFireLine:CGPointMake(tapPoint.x+40, tapPoint.y+300) withangle:-M_PI_2-0.25];
+    
+    [self drawFireLine:CGPointMake(tapPoint.x-20, tapPoint.y) withangle:-M_PI_2];
+    [self drawFireLine:CGPointMake(tapPoint.x-20, tapPoint.y+150) withangle:-M_PI_2];
+    [self drawFireLine:CGPointMake(tapPoint.x-40, tapPoint.y+300) withangle:-M_PI_2+0.25];
+    
+    [self drawLine:CGPointMake(tapPoint.x+60, tapPoint.y) withangle:-M_PI_2];
+    [self drawLine:CGPointMake(tapPoint.x+60, tapPoint.y+150) withangle:-M_PI_2];
+    [self drawLine:CGPointMake(tapPoint.x+65, tapPoint.y+300) withangle:-M_PI_2];
+    
+    [self drawLine:CGPointMake(tapPoint.x+80, tapPoint.y) withangle:-M_PI_2];
+    [self drawLine:CGPointMake(tapPoint.x+80, tapPoint.y+150) withangle:-M_PI_2];
+    [self drawLine:CGPointMake(tapPoint.x+85, tapPoint.y+300) withangle:-M_PI_2];
+    
+    [self drawLine:CGPointMake(tapPoint.x-60, tapPoint.y) withangle:-M_PI_2];
+    [self drawLine:CGPointMake(tapPoint.x-60, tapPoint.y+150) withangle:-M_PI_2];
+    [self drawLine:CGPointMake(tapPoint.x-65, tapPoint.y+300) withangle:-M_PI_2];
+    
+    [self drawLine:CGPointMake(tapPoint.x-80, tapPoint.y) withangle:-M_PI_2];
+    [self drawLine:CGPointMake(tapPoint.x-80, tapPoint.y+150) withangle:-M_PI_2];
+    [self drawLine:CGPointMake(tapPoint.x-85, tapPoint.y+300) withangle:-M_PI_2];
+}
+
+
+-(void) drawLine: (CGPoint)point withangle:(CGFloat)degree{
+    UIImageView* animatedImageView = [[UIImageView alloc] init];
+    animatedImageView.animationImages = [NSArray arrayWithObjects:
+                                         [UIImage imageNamed:@"flecha1.png"],
+                                         [UIImage imageNamed:@"flecha2.png"],
+                                         [UIImage imageNamed:@"flecha3.png"], nil];
+    animatedImageView.animationDuration = 1.0f;
+    animatedImageView.animationRepeatCount = 0;
+    [animatedImageView startAnimating];
+    animatedImageView.center = point;
+    [self.view addSubview: animatedImageView];
+    animatedImageView.transform = CGAffineTransformMakeRotation(degree);
+    [animatedImageView setBounds:CGRectMake(0, 0,150, 50)];
+    
+}
+
+-(void) drawFireLine: (CGPoint)point withangle:(CGFloat)degree{
+    UIImageView* animatedImageView = [[UIImageView alloc] init];
+    animatedImageView.animationImages = [NSArray arrayWithObjects:
+                                         [UIImage imageNamed:@"flecha_b1.png"],
+                                         [UIImage imageNamed:@"flecha_b2.png"],
+                                         [UIImage imageNamed:@"flecha_b3.png"], nil];
+    animatedImageView.animationDuration = 1.0f;
+    animatedImageView.animationRepeatCount = 0;
+    [animatedImageView startAnimating];
+    animatedImageView.center = point;
+    [self.view addSubview: animatedImageView];
+    animatedImageView.transform = CGAffineTransformMakeRotation(degree);
+    [animatedImageView setBounds:CGRectMake(0, 0,150, 50)];
 }
 
 - (void) setUpLocation
@@ -139,7 +202,7 @@
     UIViewAutoresizingFlexibleWidth;
     
     // set zoom
-    self.mapView.zoom = 3;
+    self.mapView.zoom = 13;
     
     // center the map to the coordinates
     self.mapView.centerCoordinate = center;
@@ -147,7 +210,9 @@
     [self.mapView addTileSource:[[RMMapboxSource alloc]
                                  initWithMapID:@"emmamm05.bbf667a5"]];
     
-    [self.view addSubview:self.mapView]; 
+    [self.view addSubview:self.mapView];
+    
+    
 }
 
 - (IBAction)onChangeButtonClicked:(id)sender {
