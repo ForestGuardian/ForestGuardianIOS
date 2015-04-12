@@ -71,8 +71,17 @@
     NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
     [runLoop addTimer:timer forMode:NSDefaultRunLoopMode];
     
+    //[self animationOfAlert];
+    
     //[self searchVenues:@"A" withPositions:CLLocationCoordinate2DMake(-77.032458, 38.913175)];
 
+}
+
+- (void)animationOfAlert
+{
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(animationToAlertSymbol) userInfo:nil repeats:YES];
+    NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
+    [runLoop addTimer:timer forMode:NSDefaultRunLoopMode];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -93,6 +102,11 @@
           [self.mapView pixelToCoordinate:tapPoint].latitude,
           [self.mapView pixelToCoordinate:tapPoint].longitude);
     [self.lat_longLabel setText:[NSString stringWithFormat:@"%f,%f", [self.mapView pixelToCoordinate:tapPoint].latitude, [self.mapView pixelToCoordinate:tapPoint].longitude]];
+    
+    int alert = arc4random_uniform(3) + 1;
+    NSString *image = [NSString stringWithFormat:@"%i_alert.png", alert];
+    [self.alertSymbol setImage:[UIImage imageNamed:image]];
+    //[self animationOfAlert];
     
     Tiempo *hotSpot = [[Tiempo alloc] init];
 //    [hotSpot buildTimeof:CLLocationCoordinate2DMake([self.mapView pixelToCoordinate:tapPoint].latitude, [self.mapView pixelToCoordinate:tapPoint].longitude) :^(Tiempo *responseObject, NSError *error) {
