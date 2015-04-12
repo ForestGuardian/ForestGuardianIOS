@@ -6,7 +6,7 @@ PODS:
   - FMDB/common (2.3)
   - FMDB/standard (2.3):
     - FMDB/common
-  - Foursquare-API-v2 (1.4.8)
+  - Foursquare-iOS-API (2.0)
   - GRMustache (7.3.0):
     - JRSwizzle (~> 1.0)
   - JRSwizzle (1.0)
@@ -21,7 +21,7 @@ PODS:
   - SMCalloutView (2.0)
 
 DEPENDENCIES:
-  - Foursquare-API-v2
+  - Foursquare-iOS-API
   - Mapbox-iOS-SDK
   - OpenWeatherMapAPI (~> 0.0.5)
   - Parse
@@ -30,7 +30,7 @@ SPEC CHECKSUMS:
   AFNetworking: cf8e418e16f0c9c7e5c3150d019a3c679d015018
   Bolts: f8e2f94edbf9fec7bb8de5ecaaa3aa6b7de6f64e
   FMDB: 773d79bb74226959b7e2286b1d6e0bd857c88915
-  Foursquare-API-v2: dedba546a2048dc66dc444e9784fc5f9c27f81d9
+  Foursquare-iOS-API: 724e6781f713cab2df8eef2e78f15c2af6bf6378
   GRMustache: 6baee020c5644416c034f5afb1607f6219e7f753
   JRSwizzle: dd5ead5d913a0f29e7f558200165849f006bb1e3
   Mapbox-iOS-SDK: ee136ca5b7f853456b50dfd7a7f0e243288cf86f

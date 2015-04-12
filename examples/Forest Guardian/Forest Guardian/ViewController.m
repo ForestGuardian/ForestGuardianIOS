@@ -8,17 +8,66 @@
 
 #import "ViewController.h"
 
+
 @interface ViewController ()
+
+@property(nonatomic,strong) BZFoursquareRequest *request;
+@property(nonatomic,copy) NSDictionary *meta;
+@property(nonatomic,copy) NSArray *notifications;
+@property(nonatomic,copy) NSDictionary *response;
+
+@property (nonatomic) BOOL center;
+@property (nonatomic) BOOL state;
+
+@property (weak, nonatomic) IBOutlet UIView *mainContainer;
+@property (weak, nonatomic) IBOutlet UISearchBar *placesSearch;
+@property (weak, nonatomic) IBOutlet UITableView *tableResults;
+@property (weak, nonatomic) IBOutlet UIView *switchesContainer;
+@property (weak, nonatomic) IBOutlet UIView *detailContainer;
+
+@property (weak, nonatomic) IBOutlet UILabel *lugarLabel;
+@property (weak, nonatomic) IBOutlet UILabel *coordenadasLabel;
+@property (weak, nonatomic) IBOutlet UILabel *brilloLabel;
+
+@property (strong, nonatomic) NSMutableArray *placesList;
 
 @end
 
 @implementation ViewController
 
+//- (id)init
+//{
+//    self = [super init];
+//    if (self) {
+//        self.foursquare = [[BZFoursquare alloc] initWithClientID:@"CRCWPLE13BPWDCBKNXA0AAYFOTN3UDRKHM2ZIIVYIVR1HFHU" callbackURL:@"forest-guardian://foursquare"];
+//        _foursquare.version = @"20120609";
+//        _foursquare.locale = [[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode];
+//        _foursquare.sessionDelegate = self;
+//    }
+//    return self;
+//}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self drawMapLayer];
+    self.foursquare = [[BZFoursquare alloc] initWithClientID:@"CRCWPLE13BPWDCBKNXA0AAYFOTN3UDRKHM2ZIIVYIVR1HFHU" callbackURL:@"forest-guardian://foursquare"];
+    _foursquare.version = @"20120609";
+    _foursquare.locale = [[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode];
+    _foursquare.sessionDelegate = self;
+    
+    _center = NO;
+    _state = NO;
+    
+    _placesList = [[NSMutableArray alloc] init];
+    
+    [_tableResults setDelegate:self];
+    [_tableResults setDataSource:self];
+    
     [self setUpGesture];
+    [self setUpLocation];
+    [self drawMapLayer];
+    
+    //[self searchVenues:@"A" withPositions:CLLocationCoordinate2DMake(-77.032458, 38.913175)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,7 +104,10 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     _location = [locations lastObject];
-    NSLog(@"location info object=%@", [locations lastObject]);
+    if (!_center) {
+        self.mapView.centerCoordinate = _location.coordinate;
+        _center = YES;
+    }
 }
 
 - (void) drawMapLayer
@@ -83,14 +135,111 @@
     self.mapView.centerCoordinate = center;
     
     [self.mapView addTileSource:[[RMMapboxSource alloc]
-                                 initWithMapID:@"emmamm05.7586db7d"]];
+                                 initWithMapID:@"emmamm05.bbf667a5"]];
     
-    [self.view addSubview:self.mapView];
+    [self.view addSubview:self.mapView]; 
 }
 
+- (IBAction)onChangeButtonClicked:(id)sender {
+    if (!_state) {
+        [_placesSearch setHidden:YES];
+        [_tableResults setHidden:YES];
+        [_switchesContainer setHidden:YES];
+        [_detailContainer setHidden:NO];
+        _state = YES;
+    }
+    else {
+        [_placesSearch setHidden:NO];
+        [_tableResults setHidden:NO];
+        [_switchesContainer setHidden:NO];
+        [_detailContainer setHidden:YES];
+        _state = NO;
+    }
+}
 
 - (IBAction)returnFromReportFeed:(UIStoryboardSegue*)sender
 {}
+
+//tableview
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return _placesList.count;
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *MyIdentifier = @"Place";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                       reuseIdentifier:MyIdentifier];
+    }
+    
+    [cell.textLabel setText:[_placesList objectAtIndex:indexPath.row]];
+    
+    return cell;
+}
+
+#pragma mark -
+#pragma mark BZFoursquareRequestDelegate
+
+- (void)requestDidFinishLoading:(BZFoursquareRequest *)request {
+    self.meta = request.meta;
+    self.notifications = request.notifications;
+    self.response = request.response;
+    self.request = nil;
+    
+    NSLog(@"FOURSQUARE: %@", self.request);
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
+- (void)request:(BZFoursquareRequest *)request didFailWithError:(NSError *)error {
+    NSLog(@"%s: %@", __PRETTY_FUNCTION__, error);
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:[error userInfo][@"errorDetail"] delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
+    [alertView show];
+    self.meta = request.meta;
+    self.notifications = request.notifications;
+    self.response = request.response;
+    self.request = nil;
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
+#pragma mark -
+#pragma mark Venues
+
+- (void)cancelRequest {
+    if (_request) {
+        _request.delegate = nil;
+        [_request cancel];
+        self.request = nil;
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    }
+}
+
+- (void)prepareForRequest {
+    [self cancelRequest];
+    self.meta = nil;
+    self.notifications = nil;
+    self.response = nil;
+}
+
+- (void)searchVenues:(NSString*)name withPositions:(CLLocationCoordinate2D)coodinates {
+    [self prepareForRequest];
+    NSDictionary *parameters = @{@"ll": [NSString stringWithFormat:@"%f,%f", coodinates.latitude, coodinates.longitude],
+                                 @"near":name};
+    self.request = [_foursquare requestWithPath:@"venues/search" HTTPMethod:@"GET" parameters:parameters delegate:self];
+    [_request start];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+}
 
 
 @end

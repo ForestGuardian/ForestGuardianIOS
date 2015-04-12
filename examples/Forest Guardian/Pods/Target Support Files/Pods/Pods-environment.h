@@ -36,11 +36,11 @@
 #define COCOAPODS_VERSION_MINOR_FMDB_standard 3
 #define COCOAPODS_VERSION_PATCH_FMDB_standard 0
 
-// Foursquare-API-v2
-#define COCOAPODS_POD_AVAILABLE_Foursquare_API_v2
-#define COCOAPODS_VERSION_MAJOR_Foursquare_API_v2 1
-#define COCOAPODS_VERSION_MINOR_Foursquare_API_v2 4
-#define COCOAPODS_VERSION_PATCH_Foursquare_API_v2 8
+// Foursquare-iOS-API
+#define COCOAPODS_POD_AVAILABLE_Foursquare_iOS_API
+#define COCOAPODS_VERSION_MAJOR_Foursquare_iOS_API 2
+#define COCOAPODS_VERSION_MINOR_Foursquare_iOS_API 0
+#define COCOAPODS_VERSION_PATCH_Foursquare_iOS_API 0
 
 // GRMustache
 #define COCOAPODS_POD_AVAILABLE_GRMustache

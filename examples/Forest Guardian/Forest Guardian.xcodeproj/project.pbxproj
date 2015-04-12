@@ -16,6 +16,7 @@
 		7D7777AD1AD9F828006671C3 /* Forest_GuardianTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D7777AC1AD9F828006671C3 /* Forest_GuardianTests.m */; };
 		7D7777B91AD9F9FF006671C3 /* ParseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D7777B81AD9F9FF006671C3 /* ParseHelper.m */; };
 		7D7777BD1ADA244D006671C3 /* FeedControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D7777BC1ADA244D006671C3 /* FeedControllerViewController.m */; };
+		7DA3F9451ADA6CA9002D9B97 /* ReportCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA3F9441ADA6CA9002D9B97 /* ReportCellTableViewCell.m */; };
 		9AC304D0E7E327A161C8E748 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FE5BAD6C5533485443DC3F /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,8 @@
 		7D7777B81AD9F9FF006671C3 /* ParseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseHelper.m; sourceTree = "<group>"; };
 		7D7777BB1ADA244D006671C3 /* FeedControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedControllerViewController.h; sourceTree = "<group>"; };
 		7D7777BC1ADA244D006671C3 /* FeedControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedControllerViewController.m; sourceTree = "<group>"; };
+		7DA3F9431ADA6CA9002D9B97 /* ReportCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportCellTableViewCell.h; sourceTree = "<group>"; };
+		7DA3F9441ADA6CA9002D9B97 /* ReportCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportCellTableViewCell.m; sourceTree = "<group>"; };
 		F6FE5BAD6C5533485443DC3F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -148,6 +151,8 @@
 				7D7777981AD9F825006671C3 /* ViewController.m */,
 				7D7777BB1ADA244D006671C3 /* FeedControllerViewController.h */,
 				7D7777BC1ADA244D006671C3 /* FeedControllerViewController.m */,
+				7DA3F9431ADA6CA9002D9B97 /* ReportCellTableViewCell.h */,
+				7DA3F9441ADA6CA9002D9B97 /* ReportCellTableViewCell.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 				TargetAttributes = {
 					7D77778C1AD9F825006671C3 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = V4LMV47U99;
 					};
 					7D7777A51AD9F828006671C3 = {
 						CreatedOnToolsVersion = 6.3;
@@ -309,6 +315,7 @@
 				7D7777931AD9F825006671C3 /* main.m in Sources */,
 				7D7777BD1ADA244D006671C3 /* FeedControllerViewController.m in Sources */,
 				7D7777B91AD9F9FF006671C3 /* ParseHelper.m in Sources */,
+				7DA3F9451ADA6CA9002D9B97 /* ReportCellTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,9 +442,14 @@
 			baseConfigurationReference = 3B77845A4AF6A6E9C60CEC8B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FOURSQUARE_CALLBACK_URL = "forest-guardian://foursquare";
+				FOURSQUARE_CLIENT_ID = CRCWPLE13BPWDCBKNXA0AAYFOTN3UDRKHM2ZIIVYIVR1HFHU;
 				INFOPLIST_FILE = "Forest Guardian/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -447,9 +459,14 @@
 			baseConfigurationReference = 21FF0E26E4C583B7F8249155 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FOURSQUARE_CALLBACK_URL = "forest-guardian://foursquare";
+				FOURSQUARE_CLIENT_ID = CRCWPLE13BPWDCBKNXA0AAYFOTN3UDRKHM2ZIIVYIVR1HFHU;
 				INFOPLIST_FILE = "Forest Guardian/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;

@@ -16,5 +16,6 @@
 + (void) addNewUser:(NSString*)name;
 + (void) addNewReport:(NSString*)title withDescription:(NSString*)description image:(UIImage*)image withLocation:(CLLocationCoordinate2D)location andUserId:(NSString*)userId;
 +(void)getReport:(NSString*)reportID withBlock:(void (^)(PFObject *responseObject, NSError *error))completedBlock;
++(void)getAllReportsWithBlock:(void (^)(NSMutableArray *responseObject, NSError *error))completedBlock;
 
 @end

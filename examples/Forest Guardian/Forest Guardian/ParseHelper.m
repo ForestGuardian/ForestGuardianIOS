@@ -47,4 +47,25 @@
     }];
 }
 
++ (void)getAllReportsWithBlock:(void (^)(NSMutableArray *responseObject, NSError *error))completedBlock
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"Reportes"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            // Do something with the found objects
+            NSMutableArray *reportsId = [[NSMutableArray alloc] init];
+            for (PFObject *object in objects) {
+                [reportsId addObject:object.objectId];
+            }
+            completedBlock(reportsId, nil);
+        } else {
+            NSLog(@"HIHIHIHIHI");
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+            completedBlock(nil, error);
+        }
+    }];
+}
+
 @end
