@@ -1,6 +1,8 @@
 # ForestGuardian
 
-Forest Guardin es una aplicacioón que se encarga de la predicción y control de incendios forestales.
+Forest Guardian es una aplicación que se encarga de la predicción y control de incendios forestales. Esto a través de la obtención de información de mapas provenientes de la base de datos MODIS de NASA y apis de información climatológica para generar alertas. Además una estimación de los efectos de un incendio reportado por usuarios del app.
+
+Esta aplicación se presentó en el International SpaceApps, sede Cartago, Costa Rica.
 
 Los siguientes son las bibliotecas de terceros que se utilizarons:
 
