@@ -112,6 +112,7 @@
         if (subview.tag == 555) {
             [subview removeFromSuperview];
             willShow = false;
+            
         }
     }
     if (willShow){
