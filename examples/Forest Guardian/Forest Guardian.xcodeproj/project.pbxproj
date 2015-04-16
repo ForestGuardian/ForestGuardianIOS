@@ -577,6 +577,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3B77845A4AF6A6E9C60CEC8B /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FOURSQUARE_CALLBACK_URL = "forest-guardian://foursquare";
@@ -593,6 +594,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 21FF0E26E4C583B7F8249155 /* Pods.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FOURSQUARE_CALLBACK_URL = "forest-guardian://foursquare";
