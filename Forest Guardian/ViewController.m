@@ -12,7 +12,6 @@
 
 @interface ViewController ()
 
-@property(nonatomic,strong) BZFoursquareRequest *request;
 @property(nonatomic,copy) NSDictionary *meta;
 @property(nonatomic,copy) NSArray *notifications;
 @property(nonatomic,copy) NSDictionary *response;
@@ -35,33 +34,13 @@
 
 @implementation ViewController
 
-//- (id)init
-//{
-//    self = [super init];
-//    if (self) {
-//        self.foursquare = [[BZFoursquare alloc] initWithClientID:@"CRCWPLE13BPWDCBKNXA0AAYFOTN3UDRKHM2ZIIVYIVR1HFHU" callbackURL:@"forest-guardian://foursquare"];
-//        _foursquare.version = @"20120609";
-//        _foursquare.locale = [[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode];
-//        _foursquare.sessionDelegate = self;
-//    }
-//    return self;
-//}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.foursquare = [[BZFoursquare alloc] initWithClientID:@"CRCWPLE13BPWDCBKNXA0AAYFOTN3UDRKHM2ZIIVYIVR1HFHU" callbackURL:@"forest-guardian://foursquare"];
-    _foursquare.version = @"20120609";
-    _foursquare.locale = [[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode];
-    _foursquare.sessionDelegate = self;
     
     _center = NO;
     _state = NO;
     
     _placesList = [[NSMutableArray alloc] init];
-    
-    [_tableResults setDelegate:self];
-    [_tableResults setDataSource:self];
     
     [self setUpLocation];
     [self drawMapLayer];
@@ -70,8 +49,6 @@
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(animationToAlertSymbol) userInfo:nil repeats:YES];
     NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
     [runLoop addTimer:timer forMode:NSDefaultRunLoopMode];
-    
-    //[self searchVenues:@"A" withPositions:CLLocationCoordinate2DMake(-77.032458, 38.913175)];
 
 }
 
@@ -238,87 +215,6 @@
 
 - (IBAction)returnFromReportFeed:(UIStoryboardSegue*)sender
 {}
-
-//tableview
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 1;
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return _placesList.count;
-}
-
-- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *MyIdentifier = @"Place";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
-    
-    if (cell == nil)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                       reuseIdentifier:MyIdentifier];
-    }
-    
-    [cell.textLabel setText:[_placesList objectAtIndex:indexPath.row]];
-    
-    return cell;
-}
-
-#pragma mark -
-#pragma mark BZFoursquareRequestDelegate
-
-- (void)requestDidFinishLoading:(BZFoursquareRequest *)request {
-    self.meta = request.meta;
-    self.notifications = request.notifications;
-    self.response = request.response;
-    self.request = nil;
-    
-    NSLog(@"FOURSQUARE: %@", self.request);
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-}
-
-- (void)request:(BZFoursquareRequest *)request didFailWithError:(NSError *)error {
-    NSLog(@"%s: %@", __PRETTY_FUNCTION__, error);
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:[error userInfo][@"errorDetail"] delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
-    [alertView show];
-    self.meta = request.meta;
-    self.notifications = request.notifications;
-    self.response = request.response;
-    self.request = nil;
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-}
-
-#pragma mark -
-#pragma mark Venues
-
-- (void)cancelRequest {
-    if (_request) {
-        _request.delegate = nil;
-        [_request cancel];
-        self.request = nil;
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    }
-}
-
-- (void)prepareForRequest {
-    [self cancelRequest];
-    self.meta = nil;
-    self.notifications = nil;
-    self.response = nil;
-}
-
-- (void)searchVenues:(NSString*)name withPositions:(CLLocationCoordinate2D)coodinates {
-    [self prepareForRequest];
-    NSDictionary *parameters = @{@"ll": [NSString stringWithFormat:@"%f,%f", coodinates.latitude, coodinates.longitude],
-                                 @"near":name};
-    self.request = [_foursquare requestWithPath:@"venues/search" HTTPMethod:@"GET" parameters:parameters delegate:self];
-    [_request start];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-}
 
 //Animation
 
