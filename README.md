@@ -6,8 +6,8 @@ This app was presented in the International Space Apps, Cartago, Costa Rica. The
 
 The following are the thid party libraries used for the prototype of this project:
 
-1) **MapBox**: To implement the application maps; the services offered by cloud MapBox and MapBox Studio tool for styles of maps and editing layers is used.
+1) [**MapBox**](https://www.mapbox.com/mapbox-ios-sdk/ "Mapbox - iOS SDK"): To implement the application maps; the services offered by cloud MapBox and MapBox Studio tool for styles of maps and editing layers is used.
 
-2) **Open Weather Map Api**: To obtain some climate variables in real time, such as temperature, humidity, wind speed and direction.
+2) [**Open Weather Map Api**](http://openweathermap.org/api "Open Weather Map - API"): To obtain some climate variables in real time, such as temperature, humidity, wind speed and direction.
 
-3) **Parse**: To implement the backend and store information and pictures of the reports.
+3) [**Parse**](https://parse.com/ "Parse - Backend"): To implement the backend and store information and pictures of the reports.
