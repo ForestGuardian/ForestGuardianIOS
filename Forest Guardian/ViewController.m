@@ -80,7 +80,7 @@
     
     [hotSpot buildTimeof:CLLocationCoordinate2DMake(latitude,longitude) :^(Tiempo *responseObject, NSError *error) {
         if (!error) {
-            NSLog(@"Tiempo: %@", responseObject.temp);
+            NSLog(@"Temp: %@", responseObject.temp);
         }
     }];
     

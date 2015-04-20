@@ -1184,19 +1184,19 @@
                                 <exclude reference="UDZ-54-fsJ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="7JU-mp-eJy"/>
-                                <exclude reference="SiP-Jn-SOh"/>
-                                <exclude reference="Spc-6E-qPs"/>
-                                <exclude reference="UkA-Ov-xy2"/>
+                                <exclude reference="dwC-69-OAQ"/>
                                 <exclude reference="gMq-c5-xrV"/>
                                 <exclude reference="syP-hN-zq2"/>
-                                <exclude reference="dwC-69-OAQ"/>
+                                <exclude reference="qqP-jQ-oN1"/>
                                 <exclude reference="0dv-tg-hzL"/>
                                 <exclude reference="58d-GK-7ZS"/>
                                 <exclude reference="aHe-IR-8Ra"/>
                                 <exclude reference="f3P-s8-EBb"/>
                                 <exclude reference="gj6-f7-RkO"/>
-                                <exclude reference="qqP-jQ-oN1"/>
+                                <exclude reference="7JU-mp-eJy"/>
+                                <exclude reference="SiP-Jn-SOh"/>
+                                <exclude reference="Spc-6E-qPs"/>
+                                <exclude reference="UkA-Ov-xy2"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -1209,19 +1209,19 @@
                                 <include reference="UDZ-54-fsJ"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="7JU-mp-eJy"/>
-                                <include reference="SiP-Jn-SOh"/>
-                                <include reference="Spc-6E-qPs"/>
-                                <include reference="UkA-Ov-xy2"/>
+                                <include reference="dwC-69-OAQ"/>
                                 <include reference="gMq-c5-xrV"/>
                                 <include reference="syP-hN-zq2"/>
-                                <include reference="dwC-69-OAQ"/>
+                                <include reference="qqP-jQ-oN1"/>
                                 <include reference="0dv-tg-hzL"/>
                                 <include reference="58d-GK-7ZS"/>
                                 <include reference="aHe-IR-8Ra"/>
                                 <include reference="f3P-s8-EBb"/>
                                 <include reference="gj6-f7-RkO"/>
-                                <include reference="qqP-jQ-oN1"/>
+                                <include reference="7JU-mp-eJy"/>
+                                <include reference="SiP-Jn-SOh"/>
+                                <include reference="Spc-6E-qPs"/>
+                                <include reference="UkA-Ov-xy2"/>
                             </mask>
                         </variation>
                     </view>
