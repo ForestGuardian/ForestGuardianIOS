@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		5ECF59ADC06D8A6E9A948295 /* Pods_Forest_GuardianTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E8FD7A2FD1B3F605DE9DE9 /* Pods_Forest_GuardianTests.framework */; };
 		7D4C159D1D2896CB00756D44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C159C1D2896CB00756D44 /* AppDelegate.swift */; };
-		7D4C159F1D2896CB00756D44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C159E1D2896CB00756D44 /* ViewController.swift */; };
 		7D4C15A21D2896CB00756D44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D4C15A01D2896CB00756D44 /* Main.storyboard */; };
 		7D4C15A41D2896CB00756D44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D4C15A31D2896CB00756D44 /* Assets.xcassets */; };
 		7D4C15A71D2896CB00756D44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D4C15A51D2896CB00756D44 /* LaunchScreen.storyboard */; };
 		7D4C15B21D2896CC00756D44 /* Forest_GuardianTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C15B11D2896CC00756D44 /* Forest_GuardianTests.swift */; };
 		7D4C15BD1D2896CC00756D44 /* Forest_GuardianUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C15BC1D2896CC00756D44 /* Forest_GuardianUITests.swift */; };
+		7D4C15CB1D28BB7A00756D44 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C15CA1D28BB7A00756D44 /* MapViewController.swift */; };
 		E821B50F2774BA04B2BE50AF /* Pods_Forest_Guardian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D93C043C5D09BD5FF5A29834 /* Pods_Forest_Guardian.framework */; };
 		EDEEF3200B1CC8908F6C3E2B /* Pods_Forest_GuardianUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4819A91F47D52CD2B3F9E9BA /* Pods_Forest_GuardianUITests.framework */; };
 /* End PBXBuildFile section */
@@ -42,7 +42,6 @@
 		5665FA90F769EC9D048B8743 /* Pods-Forest GuardianUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forest GuardianUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Forest GuardianUITests/Pods-Forest GuardianUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7D4C15991D2896CA00756D44 /* Forest Guardian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Forest Guardian.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4C159C1D2896CB00756D44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7D4C159E1D2896CB00756D44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7D4C15A11D2896CB00756D44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7D4C15A31D2896CB00756D44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D4C15A61D2896CB00756D44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		7D4C15B81D2896CC00756D44 /* Forest GuardianUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Forest GuardianUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4C15BC1D2896CC00756D44 /* Forest_GuardianUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forest_GuardianUITests.swift; sourceTree = "<group>"; };
 		7D4C15BE1D2896CC00756D44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D4C15CA1D28BB7A00756D44 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		83397FFCB13B14028AF20754 /* Pods-Forest GuardianUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forest GuardianUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Forest GuardianUITests/Pods-Forest GuardianUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		89E8FD7A2FD1B3F605DE9DE9 /* Pods_Forest_GuardianTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Forest_GuardianTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		961764C20747F761544FBAA7 /* Pods-Forest GuardianTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forest GuardianTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Forest GuardianTests/Pods-Forest GuardianTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				7D4C159C1D2896CB00756D44 /* AppDelegate.swift */,
-				7D4C159E1D2896CB00756D44 /* ViewController.swift */,
+				7D4C15CA1D28BB7A00756D44 /* MapViewController.swift */,
 				7D4C15A01D2896CB00756D44 /* Main.storyboard */,
 				7D4C15A31D2896CB00756D44 /* Assets.xcassets */,
 				7D4C15A51D2896CB00756D44 /* LaunchScreen.storyboard */,
@@ -178,6 +178,7 @@
 				7D4C15971D2896CA00756D44 /* Resources */,
 				F0F69A3EDC181D53DBF50500 /* 📦 Embed Pods Frameworks */,
 				430459E81BF82DCAF5093C71 /* 📦 Copy Pods Resources */,
+				7D4C15CC1D28C8E600756D44 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -241,6 +242,7 @@
 				TargetAttributes = {
 					7D4C15981D2896CA00756D44 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 5AEB54948L;
 					};
 					7D4C15AC1D2896CC00756D44 = {
 						CreatedOnToolsVersion = 7.3;
@@ -390,6 +392,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		7D4C15CC1D28C8E600756D44 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FILE=\"${SRCROOT}/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
+		};
 		9E0DE7BC5D42E2A00CA79B5B /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -427,8 +442,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D4C159F1D2896CB00756D44 /* ViewController.swift in Sources */,
 				7D4C159D1D2896CB00756D44 /* AppDelegate.swift in Sources */,
+				7D4C15CB1D28BB7A00756D44 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,10 +588,12 @@
 			baseConfigurationReference = 96F1F103910341A3D4AEB7A3 /* Pods-Forest Guardian.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Forest Guardian/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.forestguardian.Forest-Guardian";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -585,10 +602,12 @@
 			baseConfigurationReference = 354484A60F57FF4F2E2DB1E0 /* Pods-Forest Guardian.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Forest Guardian/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.forestguardian.Forest-Guardian";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
