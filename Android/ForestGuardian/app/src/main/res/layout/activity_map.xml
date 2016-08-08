@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_map"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.forestguardian.forestguardian.MapActivity">
+
+    <com.mapbox.mapboxsdk.maps.MapView
+        android:id="@+id/mapview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        mapbox:center_latitude="9.936388"
+        mapbox:center_longitude="-83.977604"
+        mapbox:zoom="7"
+        mapbox:style_url="mapbox://styles/lumurillo/cikw0v5qo00dx9flxwfm4rbnd"/>
+
+</android.support.constraint.ConstraintLayout>
