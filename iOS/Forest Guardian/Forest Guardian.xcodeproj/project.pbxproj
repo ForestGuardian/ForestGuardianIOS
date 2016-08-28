@@ -1,0 +1,706 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5ECF59ADC06D8A6E9A948295 /* Pods_Forest_GuardianTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E8FD7A2FD1B3F605DE9DE9 /* Pods_Forest_GuardianTests.framework */; };
+		7D4C159D1D2896CB00756D44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C159C1D2896CB00756D44 /* AppDelegate.swift */; };
+		7D4C15A21D2896CB00756D44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D4C15A01D2896CB00756D44 /* Main.storyboard */; };
+		7D4C15A41D2896CB00756D44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D4C15A31D2896CB00756D44 /* Assets.xcassets */; };
+		7D4C15A71D2896CB00756D44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D4C15A51D2896CB00756D44 /* LaunchScreen.storyboard */; };
+		7D4C15B21D2896CC00756D44 /* Forest_GuardianTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C15B11D2896CC00756D44 /* Forest_GuardianTests.swift */; };
+		7D4C15BD1D2896CC00756D44 /* Forest_GuardianUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C15BC1D2896CC00756D44 /* Forest_GuardianUITests.swift */; };
+		7D4C15CB1D28BB7A00756D44 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C15CA1D28BB7A00756D44 /* MapViewController.swift */; };
+		E821B50F2774BA04B2BE50AF /* Pods_Forest_Guardian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D93C043C5D09BD5FF5A29834 /* Pods_Forest_Guardian.framework */; };
+		EDEEF3200B1CC8908F6C3E2B /* Pods_Forest_GuardianUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4819A91F47D52CD2B3F9E9BA /* Pods_Forest_GuardianUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7D4C15AE1D2896CC00756D44 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D4C15911D2896CA00756D44 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D4C15981D2896CA00756D44;
+			remoteInfo = "Forest Guardian";
+		};
+		7D4C15B91D2896CC00756D44 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D4C15911D2896CA00756D44 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D4C15981D2896CA00756D44;
+			remoteInfo = "Forest Guardian";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		354484A60F57FF4F2E2DB1E0 /* Pods-Forest Guardian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forest Guardian.release.xcconfig"; path = "Pods/Target Support Files/Pods-Forest Guardian/Pods-Forest Guardian.release.xcconfig"; sourceTree = "<group>"; };
+		4819A91F47D52CD2B3F9E9BA /* Pods_Forest_GuardianUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Forest_GuardianUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5665FA90F769EC9D048B8743 /* Pods-Forest GuardianUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forest GuardianUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Forest GuardianUITests/Pods-Forest GuardianUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7D4C15991D2896CA00756D44 /* Forest Guardian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Forest Guardian.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D4C159C1D2896CB00756D44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7D4C15A11D2896CB00756D44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7D4C15A31D2896CB00756D44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7D4C15A61D2896CB00756D44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7D4C15A81D2896CB00756D44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D4C15AD1D2896CC00756D44 /* Forest GuardianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Forest GuardianTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D4C15B11D2896CC00756D44 /* Forest_GuardianTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forest_GuardianTests.swift; sourceTree = "<group>"; };
+		7D4C15B31D2896CC00756D44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D4C15B81D2896CC00756D44 /* Forest GuardianUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Forest GuardianUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D4C15BC1D2896CC00756D44 /* Forest_GuardianUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forest_GuardianUITests.swift; sourceTree = "<group>"; };
+		7D4C15BE1D2896CC00756D44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D4C15CA1D28BB7A00756D44 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		83397FFCB13B14028AF20754 /* Pods-Forest GuardianUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forest GuardianUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Forest GuardianUITests/Pods-Forest GuardianUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		89E8FD7A2FD1B3F605DE9DE9 /* Pods_Forest_GuardianTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Forest_GuardianTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		961764C20747F761544FBAA7 /* Pods-Forest GuardianTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forest GuardianTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Forest GuardianTests/Pods-Forest GuardianTests.debug.xcconfig"; sourceTree = "<group>"; };
+		96F1F103910341A3D4AEB7A3 /* Pods-Forest Guardian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forest Guardian.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Forest Guardian/Pods-Forest Guardian.debug.xcconfig"; sourceTree = "<group>"; };
+		AF87DD2813BCFE752D26771D /* Pods-Forest GuardianTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forest GuardianTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Forest GuardianTests/Pods-Forest GuardianTests.release.xcconfig"; sourceTree = "<group>"; };
+		D93C043C5D09BD5FF5A29834 /* Pods_Forest_Guardian.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Forest_Guardian.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7D4C15961D2896CA00756D44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E821B50F2774BA04B2BE50AF /* Pods_Forest_Guardian.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D4C15AA1D2896CC00756D44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ECF59ADC06D8A6E9A948295 /* Pods_Forest_GuardianTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D4C15B51D2896CC00756D44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDEEF3200B1CC8908F6C3E2B /* Pods_Forest_GuardianUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5DEDAB38A188A3D8ADD156F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				96F1F103910341A3D4AEB7A3 /* Pods-Forest Guardian.debug.xcconfig */,
+				354484A60F57FF4F2E2DB1E0 /* Pods-Forest Guardian.release.xcconfig */,
+				961764C20747F761544FBAA7 /* Pods-Forest GuardianTests.debug.xcconfig */,
+				AF87DD2813BCFE752D26771D /* Pods-Forest GuardianTests.release.xcconfig */,
+				83397FFCB13B14028AF20754 /* Pods-Forest GuardianUITests.debug.xcconfig */,
+				5665FA90F769EC9D048B8743 /* Pods-Forest GuardianUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6CCB1B64B731CB5A4C4065B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D93C043C5D09BD5FF5A29834 /* Pods_Forest_Guardian.framework */,
+				89E8FD7A2FD1B3F605DE9DE9 /* Pods_Forest_GuardianTests.framework */,
+				4819A91F47D52CD2B3F9E9BA /* Pods_Forest_GuardianUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D4C15901D2896CA00756D44 = {
+			isa = PBXGroup;
+			children = (
+				7D4C159B1D2896CB00756D44 /* Forest Guardian */,
+				7D4C15B01D2896CC00756D44 /* Forest GuardianTests */,
+				7D4C15BB1D2896CC00756D44 /* Forest GuardianUITests */,
+				7D4C159A1D2896CA00756D44 /* Products */,
+				5DEDAB38A188A3D8ADD156F4 /* Pods */,
+				6CCB1B64B731CB5A4C4065B0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7D4C159A1D2896CA00756D44 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7D4C15991D2896CA00756D44 /* Forest Guardian.app */,
+				7D4C15AD1D2896CC00756D44 /* Forest GuardianTests.xctest */,
+				7D4C15B81D2896CC00756D44 /* Forest GuardianUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7D4C159B1D2896CB00756D44 /* Forest Guardian */ = {
+			isa = PBXGroup;
+			children = (
+				7D4C159C1D2896CB00756D44 /* AppDelegate.swift */,
+				7D4C15CA1D28BB7A00756D44 /* MapViewController.swift */,
+				7D4C15A01D2896CB00756D44 /* Main.storyboard */,
+				7D4C15A31D2896CB00756D44 /* Assets.xcassets */,
+				7D4C15A51D2896CB00756D44 /* LaunchScreen.storyboard */,
+				7D4C15A81D2896CB00756D44 /* Info.plist */,
+			);
+			path = "Forest Guardian";
+			sourceTree = "<group>";
+		};
+		7D4C15B01D2896CC00756D44 /* Forest GuardianTests */ = {
+			isa = PBXGroup;
+			children = (
+				7D4C15B11D2896CC00756D44 /* Forest_GuardianTests.swift */,
+				7D4C15B31D2896CC00756D44 /* Info.plist */,
+			);
+			path = "Forest GuardianTests";
+			sourceTree = "<group>";
+		};
+		7D4C15BB1D2896CC00756D44 /* Forest GuardianUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7D4C15BC1D2896CC00756D44 /* Forest_GuardianUITests.swift */,
+				7D4C15BE1D2896CC00756D44 /* Info.plist */,
+			);
+			path = "Forest GuardianUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7D4C15981D2896CA00756D44 /* Forest Guardian */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D4C15C11D2896CC00756D44 /* Build configuration list for PBXNativeTarget "Forest Guardian" */;
+			buildPhases = (
+				26066F13270F83AE2EF5ADE0 /* 📦 Check Pods Manifest.lock */,
+				7D4C15951D2896CA00756D44 /* Sources */,
+				7D4C15961D2896CA00756D44 /* Frameworks */,
+				7D4C15971D2896CA00756D44 /* Resources */,
+				F0F69A3EDC181D53DBF50500 /* 📦 Embed Pods Frameworks */,
+				430459E81BF82DCAF5093C71 /* 📦 Copy Pods Resources */,
+				7D4C15CC1D28C8E600756D44 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Forest Guardian";
+			productName = "Forest Guardian";
+			productReference = 7D4C15991D2896CA00756D44 /* Forest Guardian.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7D4C15AC1D2896CC00756D44 /* Forest GuardianTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D4C15C41D2896CC00756D44 /* Build configuration list for PBXNativeTarget "Forest GuardianTests" */;
+			buildPhases = (
+				2ABB24E04D4530CFC8F4DA07 /* 📦 Check Pods Manifest.lock */,
+				7D4C15A91D2896CC00756D44 /* Sources */,
+				7D4C15AA1D2896CC00756D44 /* Frameworks */,
+				7D4C15AB1D2896CC00756D44 /* Resources */,
+				15024AD1D729D7FE300BD4B7 /* 📦 Embed Pods Frameworks */,
+				2BB742EECE58D80F3804C906 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D4C15AF1D2896CC00756D44 /* PBXTargetDependency */,
+			);
+			name = "Forest GuardianTests";
+			productName = "Forest GuardianTests";
+			productReference = 7D4C15AD1D2896CC00756D44 /* Forest GuardianTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7D4C15B71D2896CC00756D44 /* Forest GuardianUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D4C15C71D2896CC00756D44 /* Build configuration list for PBXNativeTarget "Forest GuardianUITests" */;
+			buildPhases = (
+				58C7B48CBEC51281D5351AB3 /* 📦 Check Pods Manifest.lock */,
+				7D4C15B41D2896CC00756D44 /* Sources */,
+				7D4C15B51D2896CC00756D44 /* Frameworks */,
+				7D4C15B61D2896CC00756D44 /* Resources */,
+				9E0DE7BC5D42E2A00CA79B5B /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D4C15BA1D2896CC00756D44 /* PBXTargetDependency */,
+			);
+			name = "Forest GuardianUITests";
+			productName = "Forest GuardianUITests";
+			productReference = 7D4C15B81D2896CC00756D44 /* Forest GuardianUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7D4C15911D2896CA00756D44 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = ForestGuardian;
+				TargetAttributes = {
+					7D4C15981D2896CA00756D44 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 5AEB54948L;
+					};
+					7D4C15AC1D2896CC00756D44 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 7D4C15981D2896CA00756D44;
+					};
+					7D4C15B71D2896CC00756D44 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 7D4C15981D2896CA00756D44;
+					};
+				};
+			};
+			buildConfigurationList = 7D4C15941D2896CA00756D44 /* Build configuration list for PBXProject "Forest Guardian" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7D4C15901D2896CA00756D44;
+			productRefGroup = 7D4C159A1D2896CA00756D44 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7D4C15981D2896CA00756D44 /* Forest Guardian */,
+				7D4C15AC1D2896CC00756D44 /* Forest GuardianTests */,
+				7D4C15B71D2896CC00756D44 /* Forest GuardianUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7D4C15971D2896CA00756D44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D4C15A71D2896CB00756D44 /* LaunchScreen.storyboard in Resources */,
+				7D4C15A41D2896CB00756D44 /* Assets.xcassets in Resources */,
+				7D4C15A21D2896CB00756D44 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D4C15AB1D2896CC00756D44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D4C15B61D2896CC00756D44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15024AD1D729D7FE300BD4B7 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Forest GuardianTests/Pods-Forest GuardianTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		26066F13270F83AE2EF5ADE0 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2ABB24E04D4530CFC8F4DA07 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2BB742EECE58D80F3804C906 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Forest GuardianTests/Pods-Forest GuardianTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		430459E81BF82DCAF5093C71 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Forest Guardian/Pods-Forest Guardian-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		58C7B48CBEC51281D5351AB3 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7D4C15CC1D28C8E600756D44 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FILE=\"${SRCROOT}/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
+		};
+		9E0DE7BC5D42E2A00CA79B5B /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Forest GuardianUITests/Pods-Forest GuardianUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0F69A3EDC181D53DBF50500 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Forest Guardian/Pods-Forest Guardian-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7D4C15951D2896CA00756D44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D4C159D1D2896CB00756D44 /* AppDelegate.swift in Sources */,
+				7D4C15CB1D28BB7A00756D44 /* MapViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D4C15A91D2896CC00756D44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D4C15B21D2896CC00756D44 /* Forest_GuardianTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D4C15B41D2896CC00756D44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D4C15BD1D2896CC00756D44 /* Forest_GuardianUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7D4C15AF1D2896CC00756D44 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7D4C15981D2896CA00756D44 /* Forest Guardian */;
+			targetProxy = 7D4C15AE1D2896CC00756D44 /* PBXContainerItemProxy */;
+		};
+		7D4C15BA1D2896CC00756D44 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7D4C15981D2896CA00756D44 /* Forest Guardian */;
+			targetProxy = 7D4C15B91D2896CC00756D44 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7D4C15A01D2896CB00756D44 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D4C15A11D2896CB00756D44 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7D4C15A51D2896CB00756D44 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D4C15A61D2896CB00756D44 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7D4C15BF1D2896CC00756D44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7D4C15C01D2896CC00756D44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7D4C15C21D2896CC00756D44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96F1F103910341A3D4AEB7A3 /* Pods-Forest Guardian.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Forest Guardian/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.forestguardian.Forest-Guardian";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7D4C15C31D2896CC00756D44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 354484A60F57FF4F2E2DB1E0 /* Pods-Forest Guardian.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Forest Guardian/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.forestguardian.Forest-Guardian";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7D4C15C51D2896CC00756D44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 961764C20747F761544FBAA7 /* Pods-Forest GuardianTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Forest GuardianTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.forestguardian.Forest-GuardianTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Forest Guardian.app/Forest Guardian";
+			};
+			name = Debug;
+		};
+		7D4C15C61D2896CC00756D44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF87DD2813BCFE752D26771D /* Pods-Forest GuardianTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Forest GuardianTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.forestguardian.Forest-GuardianTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Forest Guardian.app/Forest Guardian";
+			};
+			name = Release;
+		};
+		7D4C15C81D2896CC00756D44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83397FFCB13B14028AF20754 /* Pods-Forest GuardianUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = "Forest GuardianUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.forestguardian.Forest-GuardianUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Forest Guardian";
+			};
+			name = Debug;
+		};
+		7D4C15C91D2896CC00756D44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5665FA90F769EC9D048B8743 /* Pods-Forest GuardianUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = "Forest GuardianUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.forestguardian.Forest-GuardianUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Forest Guardian";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7D4C15941D2896CA00756D44 /* Build configuration list for PBXProject "Forest Guardian" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D4C15BF1D2896CC00756D44 /* Debug */,
+				7D4C15C01D2896CC00756D44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D4C15C11D2896CC00756D44 /* Build configuration list for PBXNativeTarget "Forest Guardian" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D4C15C21D2896CC00756D44 /* Debug */,
+				7D4C15C31D2896CC00756D44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D4C15C41D2896CC00756D44 /* Build configuration list for PBXNativeTarget "Forest GuardianTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D4C15C51D2896CC00756D44 /* Debug */,
+				7D4C15C61D2896CC00756D44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D4C15C71D2896CC00756D44 /* Build configuration list for PBXNativeTarget "Forest GuardianUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D4C15C81D2896CC00756D44 /* Debug */,
+				7D4C15C91D2896CC00756D44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7D4C15911D2896CA00756D44 /* Project object */;
+}
