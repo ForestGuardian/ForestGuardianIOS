@@ -5,7 +5,7 @@
  var attr_osm = 'Map data &copy; <a href="http://openstreetmap.org/">OpenStreetMap</a> contributors',
    attr_overpass = 'POI via <a href="http://www.overpass-api.de/">Overpass API</a>';
  var osm = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {opacity: 0.7, attribution: [attr_osm, attr_overpass].join(', ')});
- var map = new L.Map('map').addLayer(osm).setView(new L.LatLng(9.934739, -84.087502), 8);
+ var map = new L.Map('map').addLayer(osm).setView(L.latLng(27.6648274, -81.51575350000002), 8);
 
 //Global variables
 var currentFireCoordinates = null;
@@ -25,7 +25,8 @@ var currentFireCoordinates = null;
  }
 
  function setUserCurrentLocation(latitude, longitude) {
-   map.setView(L.latLng(latitude, longitude), 8)
+   console.log("lat = " + latitude + ", long = " + longitude);
+   map.setView(L.latLng(latitude, longitude), 8);
  }
 
  var geojsonLayer = new L.GeoJSON.AJAX("http://forestdev6339.cloudapp.net/Leaflet/central_america.json", {
