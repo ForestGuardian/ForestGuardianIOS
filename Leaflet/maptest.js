@@ -5,7 +5,7 @@
  var attr_osm = 'Map data &copy; <a href="http://openstreetmap.org/">OpenStreetMap</a> contributors',
    attr_overpass = 'POI via <a href="http://www.overpass-api.de/">Overpass API</a>';
  var osm = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {opacity: 0.7, attribution: [attr_osm, attr_overpass].join(', ')});
- var map = new L.Map('map').addLayer(osm).setView(L.latLng(27.6648274, -81.51575350000002), 8);
+ var map = new L.Map('map').addLayer(osm).setView(L.latLng(10.07568504578726, -84.31182861328125), 8);
 
 //Global variables
 var currentFireCoordinates = null;
@@ -21,11 +21,11 @@ var currentFireCoordinates = null;
      layer.on('click', function (e) {
        map.setView(e.latlng, 13);
        currentFireCoordinates = L.latLng(e.latlng.lat, e.latlng.lng);
+       mobile.getMODISData(JSON.stringify(feature.properties));
     });
  }
 
  function setUserCurrentLocation(latitude, longitude) {
-   console.log("lat = " + latitude + ", long = " + longitude);
    map.setView(L.latLng(latitude, longitude), 8);
  }
 

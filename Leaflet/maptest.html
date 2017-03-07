@@ -22,7 +22,10 @@
         zoom: 8,
       }
 
+      var mapView;
+
       function windytyMain(map) {
+        mapView = map;
         map.options.maxZoom = 11;
 
         var fireIcon = L.icon({
@@ -41,6 +44,11 @@
           }
         });
         geojsonLayer.addTo(map);
+      }
+
+      function setUserCurrentLocation(latitude, longitude) {
+        console.log("lat = " + latitude + ", long = " + longitude);
+        mapView.setView(L.latLng(latitude, longitude), 8);
       }
     </script>
     <script async defer src="https://api.windytv.com/v2.3/boot.js"></script>
