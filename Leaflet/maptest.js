@@ -66,14 +66,18 @@ var currentFireCoordinates = null;
    console.log(JSON.stringify(jsonMODIS));
    try {
      mobile.getMODISData(JSON.stringify(jsonMODIS));
-   }
-   catch(err) {
+   } catch(err) {
      console.log("Error trying to invoke mobile method");
    }
  }
 
  function setUserCurrentLocation(latitude, longitude) {
    map.setView(L.latLng(latitude, longitude), 8);
+   try {
+     mobile.notifyCurrentLocation();
+   } catch (err) {
+     console.log("Error trying to invoke mobile method");
+   }
  }
 
  var geojsonLayer = new L.GeoJSON.AJAX("http://forestdev6339.cloudapp.net/Leaflet/central_america.json", {
