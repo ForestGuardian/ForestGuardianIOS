@@ -1,6 +1,0 @@
-framework module Pods_Forest_GuardianTests {
-  umbrella header "Pods-Forest GuardianTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
