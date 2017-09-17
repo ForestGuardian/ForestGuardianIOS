@@ -14,17 +14,17 @@ class FGTextField: UIView {
     //MARK: Interface builder attributes
     @IBInspectable var iconImage: String = "" {
         didSet {
-            setupTextFieldViews()
+            initTextFieldViews()
         }
     }
     @IBInspectable var placeholderText: String = "" {
         didSet {
-            setupTextFieldViews()
+            initTextFieldViews()
         }
     }
     @IBInspectable var keyboardType: Int = 0 {
         didSet {
-            setupTextFieldViews()
+            initTextFieldViews()
         }
     }
     
@@ -35,16 +35,12 @@ class FGTextField: UIView {
     //MARK: Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         initTextFieldViews()
-        setupTextFieldViews()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
         initTextFieldViews()
-        setupTextFieldViews()
     }
     
     //MARK: Private Methods
@@ -70,6 +66,7 @@ class FGTextField: UIView {
         self.addSubview(container)
         
         // Create TextField icons
+        icon.image = UIImage(named: iconImage)
         icon.translatesAutoresizingMaskIntoConstraints = false
         icon.widthAnchor.constraint(equalToConstant: containerHeight).isActive = true
         icon.heightAnchor.constraint(equalToConstant: containerHeight).isActive = true
@@ -80,15 +77,8 @@ class FGTextField: UIView {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.widthAnchor.constraint(equalToConstant: self.frame.size.width - (icon.frame.size.width + container.spacing + leftMargin))
         textField.heightAnchor.constraint(equalToConstant: containerHeight)
-        container.addArrangedSubview(textField)
-    }
-    
-    private func setupTextFieldViews() {
-        // Set the icon image
-        icon.image = UIImage(named: iconImage)
-        
-        // Set the TextField placeholder
         textField.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: [NSForegroundColorAttributeName: UIColor.white])
+        container.addArrangedSubview(textField)
         
         switch keyboardType {
         case 0:
