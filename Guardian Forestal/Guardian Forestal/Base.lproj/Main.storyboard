@@ -28,17 +28,56 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="QuZ-No-8gk">
                                 <rect key="frame" x="110" y="112" width="155" height="167"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Pt-Gq-Mmq" customClass="FGTextField" customModule="Guardian_Forestal" customModuleProvider="target">
+                                <rect key="frame" x="32" y="375" width="310" height="48"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="iconImage" value="perfil"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Correo electrónico"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="keyboardType">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7id-ng-uNH" customClass="FGTextField" customModule="Guardian_Forestal" customModuleProvider="target">
+                                <rect key="frame" x="32" y="448" width="310" height="48"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="iconImage" value="candado"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Contraseña"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="keyboardType">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TWz-LL-GUY" customClass="FGButton" customModule="Guardian_Forestal" customModuleProvider="target">
+                                <rect key="frame" x="25" y="520" width="325" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enabled" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="INICIAR SESIÓN"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="VeI-uv-2YR" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="7b9-8W-NAC"/>
                             <constraint firstItem="QuZ-No-8gk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="92" id="Cr4-Ki-55z"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7id-ng-uNH" secondAttribute="bottom" constant="171" id="I7c-fT-Dcx"/>
                             <constraint firstItem="VeI-uv-2YR" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Nyk-J2-E0Y"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QuZ-No-8gk" secondAttribute="bottom" constant="388" id="SUg-TD-E6p"/>
+                            <constraint firstItem="0Pt-Gq-Mmq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XJq-SS-k6b"/>
                             <constraint firstItem="VeI-uv-2YR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Xpf-ms-HOJ"/>
+                            <constraint firstItem="0Pt-Gq-Mmq" firstAttribute="leading" secondItem="7id-ng-uNH" secondAttribute="leading" id="cbu-ym-kYP"/>
+                            <constraint firstItem="7id-ng-uNH" firstAttribute="top" secondItem="0Pt-Gq-Mmq" secondAttribute="bottom" constant="25" id="fg0-1K-JBr"/>
                             <constraint firstItem="QuZ-No-8gk" firstAttribute="centerX" secondItem="VeI-uv-2YR" secondAttribute="centerX" id="h3r-Pd-c9G"/>
+                            <constraint firstItem="0Pt-Gq-Mmq" firstAttribute="top" secondItem="QuZ-No-8gk" secondAttribute="bottom" constant="96" id="htz-SG-yLH"/>
                             <constraint firstItem="VeI-uv-2YR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="i0j-sC-ayx"/>
                             <constraint firstItem="QuZ-No-8gk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="94" id="iMx-jY-DhT"/>
+                            <constraint firstItem="0Pt-Gq-Mmq" firstAttribute="trailing" secondItem="7id-ng-uNH" secondAttribute="trailing" id="raj-NY-YbH"/>
+                            <constraint firstAttribute="bottom" secondItem="0Pt-Gq-Mmq" secondAttribute="bottom" constant="244" id="vwf-XY-Blf"/>
+                            <constraint firstItem="0Pt-Gq-Mmq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="yPB-Dv-CSS"/>
                         </constraints>
                     </view>
                 </viewController>

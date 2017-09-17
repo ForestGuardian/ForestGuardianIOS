@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B26D0311F6DA0EC00F10774 /* FGTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B26D0301F6DA0EC00F10774 /* FGTextField.swift */; };
+		9B26D0331F6F20C100F10774 /* FGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B26D0321F6F20C100F10774 /* FGButton.swift */; };
 		9BBDCFDA1F5CE3250092EECE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBDCFD91F5CE3250092EECE /* AppDelegate.swift */; };
 		9BBDCFDC1F5CE3250092EECE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBDCFDB1F5CE3250092EECE /* ViewController.swift */; };
 		9BBDCFDF1F5CE3250092EECE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BBDCFDD1F5CE3250092EECE /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B26D0301F6DA0EC00F10774 /* FGTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FGTextField.swift; sourceTree = "<group>"; };
+		9B26D0321F6F20C100F10774 /* FGButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FGButton.swift; sourceTree = "<group>"; };
 		9BBDCFD61F5CE3250092EECE /* Guardian Forestal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guardian Forestal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BBDCFD91F5CE3250092EECE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BBDCFDB1F5CE3250092EECE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B26D02F1F6DA09400F10774 /* Custom views */ = {
+			isa = PBXGroup;
+			children = (
+				9B26D0301F6DA0EC00F10774 /* FGTextField.swift */,
+				9B26D0321F6F20C100F10774 /* FGButton.swift */,
+			);
+			name = "Custom views";
+			sourceTree = "<group>";
+		};
 		9BBDCFCD1F5CE3250092EECE = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +110,7 @@
 		9BBDCFD81F5CE3250092EECE /* Guardian Forestal */ = {
 			isa = PBXGroup;
 			children = (
+				9B26D02F1F6DA09400F10774 /* Custom views */,
 				9BBDCFD91F5CE3250092EECE /* AppDelegate.swift */,
 				9BBDCFDB1F5CE3250092EECE /* ViewController.swift */,
 				9BBDCFDD1F5CE3250092EECE /* Main.storyboard */,
@@ -261,6 +275,8 @@
 			files = (
 				9BBDCFDC1F5CE3250092EECE /* ViewController.swift in Sources */,
 				9BBDCFDA1F5CE3250092EECE /* AppDelegate.swift in Sources */,
+				9B26D0331F6F20C100F10774 /* FGButton.swift in Sources */,
+				9B26D0311F6DA0EC00F10774 /* FGTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +523,7 @@
 				9BBDD0001F5CE3250092EECE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9BBDD0011F5CE3250092EECE /* Build configuration list for PBXNativeTarget "Guardian ForestalTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +532,7 @@
 				9BBDD0031F5CE3250092EECE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9BBDD0041F5CE3250092EECE /* Build configuration list for PBXNativeTarget "Guardian ForestalUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +541,7 @@
 				9BBDD0061F5CE3250092EECE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
