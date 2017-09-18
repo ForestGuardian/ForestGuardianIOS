@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		9B26D0311F6DA0EC00F10774 /* FGTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B26D0301F6DA0EC00F10774 /* FGTextField.swift */; };
 		9B26D0331F6F20C100F10774 /* FGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B26D0321F6F20C100F10774 /* FGButton.swift */; };
+		9B26D0361F6F6AC900F10774 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B26D0351F6F6AC900F10774 /* SignUpViewController.swift */; };
 		9BBDCFDA1F5CE3250092EECE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBDCFD91F5CE3250092EECE /* AppDelegate.swift */; };
-		9BBDCFDC1F5CE3250092EECE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBDCFDB1F5CE3250092EECE /* ViewController.swift */; };
+		9BBDCFDC1F5CE3250092EECE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBDCFDB1F5CE3250092EECE /* LoginViewController.swift */; };
 		9BBDCFDF1F5CE3250092EECE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BBDCFDD1F5CE3250092EECE /* Main.storyboard */; };
 		9BBDCFE11F5CE3250092EECE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BBDCFE01F5CE3250092EECE /* Assets.xcassets */; };
 		9BBDCFE41F5CE3250092EECE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BBDCFE21F5CE3250092EECE /* LaunchScreen.storyboard */; };
@@ -38,9 +39,10 @@
 /* Begin PBXFileReference section */
 		9B26D0301F6DA0EC00F10774 /* FGTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FGTextField.swift; sourceTree = "<group>"; };
 		9B26D0321F6F20C100F10774 /* FGButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FGButton.swift; sourceTree = "<group>"; };
+		9B26D0351F6F6AC900F10774 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9BBDCFD61F5CE3250092EECE /* Guardian Forestal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guardian Forestal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BBDCFD91F5CE3250092EECE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9BBDCFDB1F5CE3250092EECE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9BBDCFDB1F5CE3250092EECE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9BBDCFDE1F5CE3250092EECE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9BBDCFE01F5CE3250092EECE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BBDCFE31F5CE3250092EECE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -87,6 +89,15 @@
 			name = "Custom views";
 			sourceTree = "<group>";
 		};
+		9B26D0341F6F6A9100F10774 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9BBDCFDB1F5CE3250092EECE /* LoginViewController.swift */,
+				9B26D0351F6F6AC900F10774 /* SignUpViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		9BBDCFCD1F5CE3250092EECE = {
 			isa = PBXGroup;
 			children = (
@@ -110,9 +121,9 @@
 		9BBDCFD81F5CE3250092EECE /* Guardian Forestal */ = {
 			isa = PBXGroup;
 			children = (
+				9B26D0341F6F6A9100F10774 /* View Controllers */,
 				9B26D02F1F6DA09400F10774 /* Custom views */,
 				9BBDCFD91F5CE3250092EECE /* AppDelegate.swift */,
-				9BBDCFDB1F5CE3250092EECE /* ViewController.swift */,
 				9BBDCFDD1F5CE3250092EECE /* Main.storyboard */,
 				9BBDCFE01F5CE3250092EECE /* Assets.xcassets */,
 				9BBDCFE21F5CE3250092EECE /* LaunchScreen.storyboard */,
@@ -273,10 +284,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BBDCFDC1F5CE3250092EECE /* ViewController.swift in Sources */,
+				9BBDCFDC1F5CE3250092EECE /* LoginViewController.swift in Sources */,
 				9BBDCFDA1F5CE3250092EECE /* AppDelegate.swift in Sources */,
 				9B26D0331F6F20C100F10774 /* FGButton.swift in Sources */,
 				9B26D0311F6DA0EC00F10774 /* FGTextField.swift in Sources */,
+				9B26D0361F6F6AC900F10774 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

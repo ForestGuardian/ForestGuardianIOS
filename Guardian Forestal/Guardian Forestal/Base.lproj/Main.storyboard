@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nb7-uO-t03">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Guardian_Forestal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Guardian_Forestal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -50,23 +50,35 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TWz-LL-GUY" customClass="FGButton" customModule="Guardian_Forestal" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TWz-LL-GUY" customClass="FGButton" customModule="Guardian_Forestal" customModuleProvider="target">
                                 <rect key="frame" x="25" y="520" width="325" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="enabled" value="NO"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value="INICIAR SESIÓN"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPG-21-2pc">
+                                <rect key="frame" x="253" y="600" width="78" height="30"/>
+                                <state key="normal" title="Registrarse">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="i7F-V3-mC5" kind="show" id="uc4-Rw-C3R"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="VeI-uv-2YR" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="7b9-8W-NAC"/>
+                            <constraint firstItem="TWz-LL-GUY" firstAttribute="top" secondItem="7id-ng-uNH" secondAttribute="bottom" constant="24" id="89S-ZO-6vs"/>
+                            <constraint firstItem="UPG-21-2pc" firstAttribute="top" secondItem="TWz-LL-GUY" secondAttribute="bottom" constant="23" id="8Kz-5g-kfs"/>
                             <constraint firstItem="QuZ-No-8gk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="92" id="Cr4-Ki-55z"/>
+                            <constraint firstItem="TWz-LL-GUY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="9" id="Hp9-mj-RX5"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7id-ng-uNH" secondAttribute="bottom" constant="171" id="I7c-fT-Dcx"/>
                             <constraint firstItem="VeI-uv-2YR" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Nyk-J2-E0Y"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QuZ-No-8gk" secondAttribute="bottom" constant="388" id="SUg-TD-E6p"/>
+                            <constraint firstItem="TWz-LL-GUY" firstAttribute="centerX" secondItem="7id-ng-uNH" secondAttribute="centerX" id="T9P-pH-GGo"/>
                             <constraint firstItem="0Pt-Gq-Mmq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XJq-SS-k6b"/>
                             <constraint firstItem="VeI-uv-2YR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Xpf-ms-HOJ"/>
                             <constraint firstItem="0Pt-Gq-Mmq" firstAttribute="leading" secondItem="7id-ng-uNH" secondAttribute="leading" id="cbu-ym-kYP"/>
@@ -75,15 +87,55 @@
                             <constraint firstItem="0Pt-Gq-Mmq" firstAttribute="top" secondItem="QuZ-No-8gk" secondAttribute="bottom" constant="96" id="htz-SG-yLH"/>
                             <constraint firstItem="VeI-uv-2YR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="i0j-sC-ayx"/>
                             <constraint firstItem="QuZ-No-8gk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="94" id="iMx-jY-DhT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UPG-21-2pc" secondAttribute="trailing" constant="28" id="lGn-ZJ-H72"/>
                             <constraint firstItem="0Pt-Gq-Mmq" firstAttribute="trailing" secondItem="7id-ng-uNH" secondAttribute="trailing" id="raj-NY-YbH"/>
                             <constraint firstAttribute="bottom" secondItem="0Pt-Gq-Mmq" secondAttribute="bottom" constant="244" id="vwf-XY-Blf"/>
+                            <constraint firstAttribute="bottom" secondItem="TWz-LL-GUY" secondAttribute="bottom" constant="90" id="wsh-ke-Exi"/>
                             <constraint firstItem="0Pt-Gq-Mmq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="yPB-Dv-CSS"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Q3E-r3-o2j"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
+            <point key="canvasLocation" x="918" y="18"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NLu-hn-rQl">
+            <objects>
+                <navigationController id="nb7-uO-t03" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UqN-aF-1aq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Y9t-BB-Sqi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FOf-X3-M5F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="18"/>
+        </scene>
+        <!--REGISTRARSE-->
+        <scene sceneID="hwh-WI-9o1">
+            <objects>
+                <viewController id="i7F-V3-mC5" customClass="SignUpViewController" customModule="Guardian_Forestal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PWT-Lh-kU9"/>
+                        <viewControllerLayoutGuide type="bottom" id="xUJ-tG-3uU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C5l-VP-oOB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="REGISTRARSE" id="hUx-TG-xdh"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vfP-s4-zj7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1705" y="18"/>
         </scene>
     </scenes>
     <resources>
