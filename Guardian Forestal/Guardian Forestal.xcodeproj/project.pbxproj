@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		474C896B2C47C339119EC610 /* Pods_Guardian_Forestal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D7F827A57AC894F6BFE7D92 /* Pods_Guardian_Forestal.framework */; };
 		9B26D0311F6DA0EC00F10774 /* FGTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B26D0301F6DA0EC00F10774 /* FGTextField.swift */; };
 		9B26D0331F6F20C100F10774 /* FGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B26D0321F6F20C100F10774 /* FGButton.swift */; };
 		9B26D0361F6F6AC900F10774 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B26D0351F6F6AC900F10774 /* SignUpViewController.swift */; };
+		9BB91CF51F8ABA970085AB04 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB91CF41F8ABA970085AB04 /* MapViewController.swift */; };
 		9BBDCFDA1F5CE3250092EECE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBDCFD91F5CE3250092EECE /* AppDelegate.swift */; };
 		9BBDCFDC1F5CE3250092EECE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBDCFDB1F5CE3250092EECE /* LoginViewController.swift */; };
 		9BBDCFDF1F5CE3250092EECE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BBDCFDD1F5CE3250092EECE /* Main.storyboard */; };
@@ -37,9 +39,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D7F827A57AC894F6BFE7D92 /* Pods_Guardian_Forestal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Guardian_Forestal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AFFDFCF698A23B87618427C /* Pods-Guardian Forestal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guardian Forestal.release.xcconfig"; path = "Pods/Target Support Files/Pods-Guardian Forestal/Pods-Guardian Forestal.release.xcconfig"; sourceTree = "<group>"; };
+		31938ADB9FE68C08E5221A8F /* Pods-Guardian Forestal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guardian Forestal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Guardian Forestal/Pods-Guardian Forestal.debug.xcconfig"; sourceTree = "<group>"; };
 		9B26D0301F6DA0EC00F10774 /* FGTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FGTextField.swift; sourceTree = "<group>"; };
 		9B26D0321F6F20C100F10774 /* FGButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FGButton.swift; sourceTree = "<group>"; };
 		9B26D0351F6F6AC900F10774 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		9BB91CF41F8ABA970085AB04 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9BBDCFD61F5CE3250092EECE /* Guardian Forestal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guardian Forestal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BBDCFD91F5CE3250092EECE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BBDCFDB1F5CE3250092EECE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +59,8 @@
 		9BBDCFF51F5CE3250092EECE /* Guardian ForestalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Guardian ForestalUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BBDCFF91F5CE3250092EECE /* Guardian_ForestalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guardian_ForestalUITests.swift; sourceTree = "<group>"; };
 		9BBDCFFB1F5CE3250092EECE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7CF86B491964E9AFBD4EC88 /* Pods_Guardian_ForestalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Guardian_ForestalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBEBFCB4A1026E16804F01C7 /* Pods_Guardian_ForestalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Guardian_ForestalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				474C896B2C47C339119EC610 /* Pods_Guardian_Forestal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +89,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4BA206E02EE0AED24E8AA097 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D7F827A57AC894F6BFE7D92 /* Pods_Guardian_Forestal.framework */,
+				B7CF86B491964E9AFBD4EC88 /* Pods_Guardian_ForestalTests.framework */,
+				FBEBFCB4A1026E16804F01C7 /* Pods_Guardian_ForestalUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		85BD6A609C22050710F1ECE5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				31938ADB9FE68C08E5221A8F /* Pods-Guardian Forestal.debug.xcconfig */,
+				1AFFDFCF698A23B87618427C /* Pods-Guardian Forestal.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9B26D02F1F6DA09400F10774 /* Custom views */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +122,7 @@
 			children = (
 				9BBDCFDB1F5CE3250092EECE /* LoginViewController.swift */,
 				9B26D0351F6F6AC900F10774 /* SignUpViewController.swift */,
+				9BB91CF41F8ABA970085AB04 /* MapViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -105,6 +134,8 @@
 				9BBDCFED1F5CE3250092EECE /* Guardian ForestalTests */,
 				9BBDCFF81F5CE3250092EECE /* Guardian ForestalUITests */,
 				9BBDCFD71F5CE3250092EECE /* Products */,
+				85BD6A609C22050710F1ECE5 /* Pods */,
+				4BA206E02EE0AED24E8AA097 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,9 +188,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9BBDCFFE1F5CE3250092EECE /* Build configuration list for PBXNativeTarget "Guardian Forestal" */;
 			buildPhases = (
+				55AD7E1BC53873774D1190DF /* [CP] Check Pods Manifest.lock */,
 				9BBDCFD21F5CE3250092EECE /* Sources */,
 				9BBDCFD31F5CE3250092EECE /* Frameworks */,
 				9BBDCFD41F5CE3250092EECE /* Resources */,
+				DA1AB9E490D3B8F78D436A33 /* [CP] Embed Pods Frameworks */,
+				8E618167383730421C6340B1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -279,12 +313,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		55AD7E1BC53873774D1190DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Guardian Forestal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E618167383730421C6340B1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Guardian Forestal/Pods-Guardian Forestal-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA1AB9E490D3B8F78D436A33 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Guardian Forestal/Pods-Guardian Forestal-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SideMenuController/SideMenuController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenuController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Guardian Forestal/Pods-Guardian Forestal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9BBDCFD21F5CE3250092EECE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9BBDCFDC1F5CE3250092EECE /* LoginViewController.swift in Sources */,
+				9BB91CF51F8ABA970085AB04 /* MapViewController.swift in Sources */,
 				9BBDCFDA1F5CE3250092EECE /* AppDelegate.swift in Sources */,
 				9B26D0331F6F20C100F10774 /* FGButton.swift in Sources */,
 				9B26D0311F6DA0EC00F10774 /* FGTextField.swift in Sources */,
@@ -440,6 +529,7 @@
 		};
 		9BBDCFFF1F5CE3250092EECE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31938ADB9FE68C08E5221A8F /* Pods-Guardian Forestal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Guardian Forestal/Info.plist";
@@ -452,6 +542,7 @@
 		};
 		9BBDD0001F5CE3250092EECE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AFFDFCF698A23B87618427C /* Pods-Guardian Forestal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Guardian Forestal/Info.plist";

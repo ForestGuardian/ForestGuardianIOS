@@ -101,6 +101,40 @@
             </objects>
             <point key="canvasLocation" x="918" y="18"/>
         </scene>
+        <!--INCENDIOS-->
+        <scene sceneID="4wS-XI-Isw">
+            <objects>
+                <viewController id="PzG-wg-ynI" customClass="MapViewController" customModule="Guardian_Forestal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9qc-er-hDV"/>
+                        <viewControllerLayoutGuide type="bottom" id="h2k-Yg-FuI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ceP-hS-K5R">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Se-qg-8K9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1Se-qg-8K9" firstAttribute="top" secondItem="9qc-er-hDV" secondAttribute="bottom" constant="-64" id="0qc-yW-9SV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1Se-qg-8K9" secondAttribute="trailing" constant="-16" id="le6-FZ-tI0"/>
+                            <constraint firstItem="1Se-qg-8K9" firstAttribute="leading" secondItem="ceP-hS-K5R" secondAttribute="leadingMargin" constant="-16" id="mkZ-DJ-pOx"/>
+                            <constraint firstItem="h2k-Yg-FuI" firstAttribute="top" secondItem="1Se-qg-8K9" secondAttribute="bottom" id="xZm-VO-lLY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="INCENDIOS" id="GTw-Cs-KWT"/>
+                    <connections>
+                        <outlet property="rootContainer" destination="1Se-qg-8K9" id="vCE-cs-6dO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DGY-mQ-NOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="917.60000000000002" y="775.86206896551732"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="NLu-hn-rQl">
             <objects>
@@ -115,7 +149,7 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Y9t-BB-Sqi"/>
+                        <segue destination="PzG-wg-ynI" kind="relationship" relationship="rootViewController" id="dZV-b9-odh"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FOf-X3-M5F" userLabel="First Responder" sceneMemberID="firstResponder"/>
