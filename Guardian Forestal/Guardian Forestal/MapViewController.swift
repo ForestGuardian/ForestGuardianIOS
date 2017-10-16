@@ -10,6 +10,7 @@ import UIKit
 import WebKit
 import SwiftLocation
 import CoreLocation
+import MapboxGeocoder
 
 class MapViewController: UIViewController, WKScriptMessageHandler {
 
@@ -18,6 +19,7 @@ class MapViewController: UIViewController, WKScriptMessageHandler {
     private var weatherState: Bool!
     private var windState: Bool!
     private var forestState: Bool!
+    private var geocoder: Geocoder!
     private var isCurrentLocationSet: Bool!
     private var currentLocation: CLLocation! {
         didSet {
@@ -29,6 +31,7 @@ class MapViewController: UIViewController, WKScriptMessageHandler {
     @IBOutlet weak var weatherButton: UIButton!
     @IBOutlet weak var windButton: UIButton!
     @IBOutlet weak var forestButton: UIButton!
+    @IBOutlet weak var addressLabel: UILabel!
     
     override func loadView() {
          super.loadView()
@@ -68,6 +71,7 @@ class MapViewController: UIViewController, WKScriptMessageHandler {
         self.forestState = false
         self.isCurrentLocationSet = false
         //self.currentLocation = CLLocation()
+        self.geocoder = Geocoder(accessToken: "pk.eyJ1IjoibHVtdXJpbGxvIiwiYSI6IlVRTlZkbFkifQ.nFkWwVMJm_5mUy-9ye65Og")
     }
 
     override func didReceiveMemoryWarning() {
@@ -95,6 +99,30 @@ class MapViewController: UIViewController, WKScriptMessageHandler {
         
         Location.onReceiveNewLocation = {location in
             self.currentLocation = location
+            
+            // Set the current address
+            if (!self.isCurrentLocationSet) {
+                self.isCurrentLocationSet = true
+                self.setLocationAddress()
+            }
+        }
+    }
+    
+    private func setLocationAddress() {
+        let options = ReverseGeocodeOptions(coordinate: CLLocationCoordinate2D(latitude: self.currentLocation.coordinate.latitude, longitude: self.currentLocation.coordinate.longitude))
+        
+        _ = geocoder.geocode(options) { (placemarks, attribution, error) in
+            guard let placemark = placemarks?.first else {
+                return
+            }
+            
+            let street: String = placemark.addressDictionary?[AnyHashable("street")] as! String
+            let city: String = placemark.addressDictionary?[AnyHashable("city")] as! String
+            let state: String = placemark.addressDictionary?[AnyHashable("state")] as! String
+            let country: String = placemark.addressDictionary?[AnyHashable("country")] as! String
+            let address: String = street + ", " + city + ", " + state + ", " + country
+            
+            self.addressLabel.text = address
         }
     }
     
