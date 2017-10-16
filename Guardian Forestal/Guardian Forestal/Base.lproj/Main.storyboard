@@ -123,7 +123,7 @@
                                     <constraint firstAttribute="width" constant="52" id="Rzd-nA-JhN"/>
                                     <constraint firstAttribute="height" constant="52" id="f1W-EK-N1h"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="rain_on_icon">
+                                <state key="normal" backgroundImage="rain_off_icon">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
@@ -140,7 +140,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bagaces, Guanacaste, CR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5N-pr-DVj">
                                         <rect key="frame" x="8" y="8" width="359" height="57"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -154,20 +154,40 @@
                                     <constraint firstAttribute="height" constant="73" id="y06-V4-me6"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BR2-Mc-2wu">
+                                <rect key="frame" x="30" y="473" width="52" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="TUy-ng-k1b"/>
+                                    <constraint firstAttribute="width" constant="52" id="iDW-Hi-qz2"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="wind_on_icon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKd-e9-lfK">
+                                <rect key="frame" x="30" y="530" width="52" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="2nK-ae-tgf"/>
+                                    <constraint firstAttribute="width" constant="52" id="gbr-r1-64W"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="forest_off_icon"/>
+                            </button>
                         </subviews>
                         <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="1Se-qg-8K9" firstAttribute="top" secondItem="9qc-er-hDV" secondAttribute="bottom" constant="-64" id="0qc-yW-9SV"/>
+                            <constraint firstItem="BR2-Mc-2wu" firstAttribute="top" secondItem="IUD-es-5vv" secondAttribute="bottom" constant="4" id="I2M-wk-adz"/>
+                            <constraint firstItem="HKd-e9-lfK" firstAttribute="top" secondItem="BR2-Mc-2wu" secondAttribute="bottom" constant="5" id="M0m-Y7-rEn"/>
                             <constraint firstItem="h2k-Yg-FuI" firstAttribute="top" secondItem="HVI-nc-9Q0" secondAttribute="bottom" id="TTe-ya-bRO"/>
                             <constraint firstItem="HVI-nc-9Q0" firstAttribute="top" secondItem="ogr-Zj-AZi" secondAttribute="bottom" constant="23" id="Tak-Ih-6Kz"/>
                             <constraint firstItem="HVI-nc-9Q0" firstAttribute="leading" secondItem="ceP-hS-K5R" secondAttribute="leadingMargin" constant="-16" id="YjF-jx-b8g"/>
+                            <constraint firstItem="HKd-e9-lfK" firstAttribute="leading" secondItem="ceP-hS-K5R" secondAttribute="leadingMargin" constant="14" id="ZZA-1t-MbN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ogr-Zj-AZi" secondAttribute="trailing" constant="2" id="bOp-uD-26I"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HVI-nc-9Q0" secondAttribute="trailing" constant="-16" id="dQ8-Vi-0GV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1Se-qg-8K9" secondAttribute="trailing" constant="-16" id="le6-FZ-tI0"/>
                             <constraint firstItem="1Se-qg-8K9" firstAttribute="leading" secondItem="ceP-hS-K5R" secondAttribute="leadingMargin" constant="-16" id="mkZ-DJ-pOx"/>
+                            <constraint firstItem="HVI-nc-9Q0" firstAttribute="top" secondItem="HKd-e9-lfK" secondAttribute="bottom" constant="12" id="nzu-sp-5uj"/>
                             <constraint firstItem="IUD-es-5vv" firstAttribute="leading" secondItem="ceP-hS-K5R" secondAttribute="leadingMargin" constant="14" id="tjR-19-UNO"/>
-                            <constraint firstItem="h2k-Yg-FuI" firstAttribute="top" secondItem="IUD-es-5vv" secondAttribute="bottom" constant="198" id="uOh-T2-iuh"/>
                             <constraint firstItem="h2k-Yg-FuI" firstAttribute="top" secondItem="1Se-qg-8K9" secondAttribute="bottom" id="xZm-VO-lLY"/>
+                            <constraint firstItem="BR2-Mc-2wu" firstAttribute="leading" secondItem="ceP-hS-K5R" secondAttribute="leadingMargin" constant="14" id="zWU-Ob-egu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="INCENDIOS" id="GTw-Cs-KWT">
@@ -304,8 +324,10 @@
     <resources>
         <image name="bg" width="750" height="1334"/>
         <image name="current_location_icon" width="32" height="32"/>
+        <image name="forest_off_icon" width="24" height="24"/>
         <image name="logo" width="310" height="330"/>
-        <image name="rain_on_icon" width="24" height="24"/>
+        <image name="rain_off_icon" width="24" height="24"/>
         <image name="search" width="11" height="11"/>
+        <image name="wind_on_icon" width="26" height="26"/>
     </resources>
 </document>
