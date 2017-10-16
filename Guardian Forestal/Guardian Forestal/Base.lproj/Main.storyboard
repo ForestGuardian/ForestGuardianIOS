@@ -117,16 +117,62 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUD-es-5vv">
+                                <rect key="frame" x="30" y="417" width="52" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="52" id="Rzd-nA-JhN"/>
+                                    <constraint firstAttribute="height" constant="52" id="f1W-EK-N1h"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="rain_on_icon">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogr-Zj-AZi">
+                                <rect key="frame" x="293" y="507" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="59Q-XO-Ba2"/>
+                                    <constraint firstAttribute="width" constant="64" id="TJD-fo-It3"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="current_location_icon"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HVI-nc-9Q0">
+                                <rect key="frame" x="0.0" y="594" width="375" height="73"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bagaces, Guanacaste, CR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5N-pr-DVj">
+                                        <rect key="frame" x="8" y="8" width="359" height="57"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="m5N-pr-DVj" secondAttribute="trailing" constant="8" id="FCQ-n6-j4X"/>
+                                    <constraint firstItem="m5N-pr-DVj" firstAttribute="top" secondItem="HVI-nc-9Q0" secondAttribute="top" constant="8" id="alu-Tv-pZ6"/>
+                                    <constraint firstAttribute="bottom" secondItem="m5N-pr-DVj" secondAttribute="bottom" constant="8" id="bUi-Ra-a9r"/>
+                                    <constraint firstItem="m5N-pr-DVj" firstAttribute="leading" secondItem="HVI-nc-9Q0" secondAttribute="leading" constant="8" id="nwK-XL-7aY"/>
+                                    <constraint firstAttribute="height" constant="73" id="y06-V4-me6"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="1Se-qg-8K9" firstAttribute="top" secondItem="9qc-er-hDV" secondAttribute="bottom" constant="-64" id="0qc-yW-9SV"/>
+                            <constraint firstItem="h2k-Yg-FuI" firstAttribute="top" secondItem="HVI-nc-9Q0" secondAttribute="bottom" id="TTe-ya-bRO"/>
+                            <constraint firstItem="HVI-nc-9Q0" firstAttribute="top" secondItem="ogr-Zj-AZi" secondAttribute="bottom" constant="23" id="Tak-Ih-6Kz"/>
+                            <constraint firstItem="HVI-nc-9Q0" firstAttribute="leading" secondItem="ceP-hS-K5R" secondAttribute="leadingMargin" constant="-16" id="YjF-jx-b8g"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ogr-Zj-AZi" secondAttribute="trailing" constant="2" id="bOp-uD-26I"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HVI-nc-9Q0" secondAttribute="trailing" constant="-16" id="dQ8-Vi-0GV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1Se-qg-8K9" secondAttribute="trailing" constant="-16" id="le6-FZ-tI0"/>
                             <constraint firstItem="1Se-qg-8K9" firstAttribute="leading" secondItem="ceP-hS-K5R" secondAttribute="leadingMargin" constant="-16" id="mkZ-DJ-pOx"/>
+                            <constraint firstItem="IUD-es-5vv" firstAttribute="leading" secondItem="ceP-hS-K5R" secondAttribute="leadingMargin" constant="14" id="tjR-19-UNO"/>
+                            <constraint firstItem="h2k-Yg-FuI" firstAttribute="top" secondItem="IUD-es-5vv" secondAttribute="bottom" constant="198" id="uOh-T2-iuh"/>
                             <constraint firstItem="h2k-Yg-FuI" firstAttribute="top" secondItem="1Se-qg-8K9" secondAttribute="bottom" id="xZm-VO-lLY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="INCENDIOS" id="GTw-Cs-KWT"/>
+                    <navigationItem key="navigationItem" title="INCENDIOS" id="GTw-Cs-KWT">
+                        <barButtonItem key="rightBarButtonItem" image="search" id="WPK-4B-wJU"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="rootContainer" destination="1Se-qg-8K9" id="vCE-cs-6dO"/>
                     </connections>
@@ -257,6 +303,9 @@
     </scenes>
     <resources>
         <image name="bg" width="750" height="1334"/>
+        <image name="current_location_icon" width="32" height="32"/>
         <image name="logo" width="310" height="330"/>
+        <image name="rain_on_icon" width="24" height="24"/>
+        <image name="search" width="11" height="11"/>
     </resources>
 </document>
