@@ -8,6 +8,8 @@
 
 import UIKit
 import WebKit
+import SwiftLocation
+import CoreLocation
 
 class MapViewController: UIViewController, WKScriptMessageHandler {
 
@@ -16,6 +18,12 @@ class MapViewController: UIViewController, WKScriptMessageHandler {
     private var weatherState: Bool!
     private var windState: Bool!
     private var forestState: Bool!
+    private var isCurrentLocationSet: Bool!
+    private var currentLocation: CLLocation! {
+        didSet {
+            //self.changeLocation(location: self.currentLocation)
+        }
+    }
     
     @IBOutlet weak var rootContainer: UIView!
     @IBOutlet weak var weatherButton: UIButton!
@@ -41,6 +49,13 @@ class MapViewController: UIViewController, WKScriptMessageHandler {
         self.rootContainer.addSubview(self.mapWebView!)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Init the location configuration
+        self.initLocation()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,6 +66,8 @@ class MapViewController: UIViewController, WKScriptMessageHandler {
         self.weatherState = false
         self.windState = true
         self.forestState = false
+        self.isCurrentLocationSet = false
+        //self.currentLocation = CLLocation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,6 +82,32 @@ class MapViewController: UIViewController, WKScriptMessageHandler {
         self.mapWebView?.load(request)
     }
     
+    private func initLocation() {
+        let x = Location.getLocation(accuracy: .room, frequency: .continuous, timeout: 60*60*5, cancelOnError: true, success: { (_, location) -> (Void) in
+            self.currentLocation = location
+        }) { (request, last, error) -> (Void) in
+            print("Location monitoring failed due to an error \(error)")
+            request.cancel()
+        }
+        x.register(observer: LocObserver.onAuthDidChange(.main, { (request, oldAuth, newAuth) -> (Void) in
+            print("Authorization moved from '\(oldAuth)' to '\(newAuth)'")
+        }))
+        
+        Location.onReceiveNewLocation = {location in
+            self.currentLocation = location
+        }
+    }
+    
+    private func changeLocation( location: CLLocation) {
+        let lat: Double = Double(location.coordinate.latitude)
+        let lon: Double = Double(location.coordinate.longitude)
+        let setLocation: String = "setUserCurrentLocation(" + String(lat) + ", " + String(lon) + ")"
+        
+        NSLog("Lat: %f, Lon: %f", self.currentLocation.coordinate.latitude, self.currentLocation.coordinate.longitude)
+        self.mapWebView?.evaluateJavaScript(setLocation, completionHandler: nil)
+        self.mapWebView?.evaluateJavaScript("moveToUserCurrentLocation()", completionHandler: nil)
+    }
+    
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if (message.name == "mobile") {
             
@@ -72,7 +115,7 @@ class MapViewController: UIViewController, WKScriptMessageHandler {
     }
     
     @IBAction func onCurrentLocation(_ sender: Any) {
-        NSLog("Clicking the current location button")
+        self.changeLocation(location: self.currentLocation)
     }
     
     @IBAction func onRainLayer(_ sender: Any) {
@@ -113,6 +156,7 @@ class MapViewController: UIViewController, WKScriptMessageHandler {
     
     @IBAction func onSearch(_ sender: Any) {
         NSLog("Clicking the search button")
+        self.changeLocation(location: self.currentLocation)
     }
 
     /*
