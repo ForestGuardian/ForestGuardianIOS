@@ -13,8 +13,14 @@ class MapViewController: UIViewController, WKScriptMessageHandler {
 
     
     private var mapWebView: WKWebView?
+    private var weatherState: Bool!
+    private var windState: Bool!
+    private var forestState: Bool!
     
     @IBOutlet weak var rootContainer: UIView!
+    @IBOutlet weak var weatherButton: UIButton!
+    @IBOutlet weak var windButton: UIButton!
+    @IBOutlet weak var forestButton: UIButton!
     
     override func loadView() {
          super.loadView()
@@ -40,6 +46,11 @@ class MapViewController: UIViewController, WKScriptMessageHandler {
 
         // Init the MapViewController views
         self.initView()
+        
+        //Set default values
+        self.weatherState = false
+        self.windState = true
+        self.forestState = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,6 +71,49 @@ class MapViewController: UIViewController, WKScriptMessageHandler {
         }
     }
     
+    @IBAction func onCurrentLocation(_ sender: Any) {
+        NSLog("Clicking the current location button")
+    }
+    
+    @IBAction func onRainLayer(_ sender: Any) {
+        if (self.weatherState) {
+            self.weatherState = false
+            self.weatherButton.setBackgroundImage(UIImage(named: "rain_off_icon"), for: UIControlState.normal)
+            self.mapWebView?.evaluateJavaScript("hideWeatherLayer()", completionHandler: nil)
+        } else {
+            self.weatherState = true
+            self.weatherButton.setBackgroundImage(UIImage(named: "rain_on_icon"), for: UIControlState.normal)
+            self.mapWebView?.evaluateJavaScript("showWeatherLayer()", completionHandler: nil)
+        }
+    }
+    
+    @IBAction func onWindLayer(_ sender: Any) {
+        if (self.windState) {
+            self.windState = false
+            self.windButton.setBackgroundImage(UIImage(named: "wind_off_icon"), for: UIControlState.normal)
+            self.mapWebView?.evaluateJavaScript("hideWindsLayer()", completionHandler: nil)
+        } else {
+            self.windState = true
+            self.windButton.setBackgroundImage(UIImage(named: "wind_on_icon"), for: UIControlState.normal)
+            self.mapWebView?.evaluateJavaScript("showWindsLayer()", completionHandler: nil)
+        }
+    }
+    
+    @IBAction func onForestLayer(_ sender: Any) {
+        if (self.forestState) {
+            self.forestState = false
+            self.forestButton.setBackgroundImage(UIImage(named: "forest_off_icon"), for: UIControlState.normal)
+            self.mapWebView?.evaluateJavaScript("hideForestLayer()", completionHandler: nil)
+        } else {
+            self.forestState = true
+            self.forestButton.setBackgroundImage(UIImage(named: "forest_on_icon"), for: UIControlState.normal)
+            self.mapWebView?.evaluateJavaScript("showForestLayer()", completionHandler: nil)
+        }
+    }
+    
+    @IBAction func onSearch(_ sender: Any) {
+        NSLog("Clicking the search button")
+    }
 
     /*
     // MARK: - Navigation

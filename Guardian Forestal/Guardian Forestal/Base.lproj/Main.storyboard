@@ -126,6 +126,9 @@
                                 <state key="normal" backgroundImage="rain_off_icon">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="onRainLayer:" destination="PzG-wg-ynI" eventType="touchUpInside" id="dKu-j3-PIl"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogr-Zj-AZi">
                                 <rect key="frame" x="293" y="507" width="64" height="64"/>
@@ -134,6 +137,9 @@
                                     <constraint firstAttribute="width" constant="64" id="TJD-fo-It3"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="current_location_icon"/>
+                                <connections>
+                                    <action selector="onCurrentLocation:" destination="PzG-wg-ynI" eventType="touchUpInside" id="N8l-lW-2I6"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HVI-nc-9Q0">
                                 <rect key="frame" x="0.0" y="594" width="375" height="73"/>
@@ -161,6 +167,9 @@
                                     <constraint firstAttribute="width" constant="52" id="iDW-Hi-qz2"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="wind_on_icon"/>
+                                <connections>
+                                    <action selector="onWindLayer:" destination="PzG-wg-ynI" eventType="touchUpInside" id="MNK-Sn-CbL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKd-e9-lfK">
                                 <rect key="frame" x="30" y="530" width="52" height="52"/>
@@ -169,6 +178,9 @@
                                     <constraint firstAttribute="width" constant="52" id="gbr-r1-64W"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="forest_off_icon"/>
+                                <connections>
+                                    <action selector="onForestLayer:" destination="PzG-wg-ynI" eventType="touchUpInside" id="JoZ-D4-ITK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
@@ -191,10 +203,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="INCENDIOS" id="GTw-Cs-KWT">
-                        <barButtonItem key="rightBarButtonItem" image="search" id="WPK-4B-wJU"/>
+                        <barButtonItem key="rightBarButtonItem" image="search" id="WPK-4B-wJU">
+                            <connections>
+                                <action selector="onSearch:" destination="PzG-wg-ynI" id="YxP-4u-cCJ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="forestButton" destination="HKd-e9-lfK" id="gN6-Bk-ICk"/>
                         <outlet property="rootContainer" destination="1Se-qg-8K9" id="vCE-cs-6dO"/>
+                        <outlet property="weatherButton" destination="IUD-es-5vv" id="6Wu-FP-IHI"/>
+                        <outlet property="windButton" destination="BR2-Mc-2wu" id="m5h-hz-tbc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DGY-mQ-NOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
