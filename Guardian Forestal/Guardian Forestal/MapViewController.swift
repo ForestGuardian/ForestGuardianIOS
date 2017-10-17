@@ -11,8 +11,9 @@ import WebKit
 import SwiftLocation
 import CoreLocation
 import MapboxGeocoder
+import ModernSearchBar
 
-class MapViewController: UIViewController, WKScriptMessageHandler {
+class MapViewController: UIViewController, WKScriptMessageHandler, ModernSearchBarDelegate {
 
     
     private var mapWebView: WKWebView?
@@ -20,6 +21,7 @@ class MapViewController: UIViewController, WKScriptMessageHandler {
     private var windState: Bool!
     private var forestState: Bool!
     private var geocoder: Geocoder!
+    private var isSearchOpen: Bool!
     private var isCurrentLocationSet: Bool!
     private var currentLocation: CLLocation! {
         didSet {
@@ -27,11 +29,13 @@ class MapViewController: UIViewController, WKScriptMessageHandler {
         }
     }
     
+    @IBOutlet weak var topContainer: UIView!
     @IBOutlet weak var rootContainer: UIView!
     @IBOutlet weak var weatherButton: UIButton!
     @IBOutlet weak var windButton: UIButton!
     @IBOutlet weak var forestButton: UIButton!
     @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var modernSearchBar: ModernSearchBar!
     
     override func loadView() {
          super.loadView()
@@ -64,11 +68,13 @@ class MapViewController: UIViewController, WKScriptMessageHandler {
 
         // Init the MapViewController views
         self.initView()
+        self.initSearchBar()
         
         //Set default values
         self.weatherState = false
         self.windState = true
         self.forestState = false
+        self.isSearchOpen = false
         self.isCurrentLocationSet = false
         //self.currentLocation = CLLocation()
         self.geocoder = Geocoder(accessToken: "pk.eyJ1IjoibHVtdXJpbGxvIiwiYSI6IlVRTlZkbFkifQ.nFkWwVMJm_5mUy-9ye65Og")
@@ -105,6 +111,64 @@ class MapViewController: UIViewController, WKScriptMessageHandler {
                 self.isCurrentLocationSet = true
                 self.setLocationAddress()
             }
+        }
+    }
+    
+    private func initSearchBar() {
+        self.modernSearchBar.delegateModernSearchBar = self
+        self.modernSearchBar.showsCancelButton = true
+        self.modernSearchBar.shadowView_alpha = 0
+    }
+    
+    func onClickItemWithUrlSuggestionsView(item: ModernSearchBarModel) {
+        let coordinatesStrings = item.url.description.components(separatedBy: ",")
+        let lat = Double(coordinatesStrings[0])
+        let lon = Double(coordinatesStrings[1])
+        self.changeLocation(location: CLLocation(latitude: lat!, longitude: lon!))
+        
+        // Close the search bar
+        self.isSearchOpen = false
+        self.modernSearchBar.isHidden = true
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    func onClickShadowView(shadowView: UIView) {
+        print("User click the shadow")
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("Searching: " + searchText)
+        self.getLocationPoints(locationQuery: searchText)
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        print("Searching: " + searchBar.text!)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.isSearchOpen = false
+        self.modernSearchBar.isHidden = true
+        self.topContainer.isHidden = true
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    private func getLocationPoints(locationQuery: String) {
+        let options = ForwardGeocodeOptions(query: locationQuery)
+        options.allowedScopes = [.address, .pointOfInterest]
+        
+        _ = geocoder.geocode(options) { (placemarks, attribution, error) in
+            if ((placemarks?.first) == nil) {
+                return
+            }
+            
+            var suggestionListWithUrl = Array<ModernSearchBarModel>()
+            for place in placemarks! {
+                let lat = Double(place.location.coordinate.latitude)
+                let lon = Double(place.location.coordinate.longitude)
+                
+                suggestionListWithUrl.append(ModernSearchBarModel(title: place.name, url: "" + String(lat) + "," + String(lon)))
+            }
+            self.modernSearchBar.setDatasWithUrl(datas: suggestionListWithUrl)
         }
     }
     
@@ -183,8 +247,17 @@ class MapViewController: UIViewController, WKScriptMessageHandler {
     }
     
     @IBAction func onSearch(_ sender: Any) {
-        NSLog("Clicking the search button")
-        self.changeLocation(location: self.currentLocation)
+        if (self.isSearchOpen) {
+            self.isSearchOpen = false
+            self.modernSearchBar.isHidden = true
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+        } else {
+            self.isSearchOpen = true
+            self.modernSearchBar.isHidden = false
+            self.modernSearchBar.becomeFirstResponder()
+            self.topContainer.isHidden = false
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
+        }
     }
 
     /*

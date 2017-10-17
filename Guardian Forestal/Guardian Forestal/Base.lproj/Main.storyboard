@@ -182,17 +182,35 @@
                                     <action selector="onForestLayer:" destination="PzG-wg-ynI" eventType="touchUpInside" id="JoZ-D4-ITK"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kpd-nU-MYA">
+                                <rect key="frame" x="0.0" y="38" width="375" height="29"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="axS-47-AVw"/>
+                                </constraints>
+                            </view>
+                            <searchBar hidden="YES" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="6Kr-KY-y3c" customClass="ModernSearchBar" customModule="ModernSearchBar">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="1Se-qg-8K9" firstAttribute="top" secondItem="9qc-er-hDV" secondAttribute="bottom" constant="-64" id="0qc-yW-9SV"/>
+                            <constraint firstItem="6Kr-KY-y3c" firstAttribute="leading" secondItem="ceP-hS-K5R" secondAttribute="leadingMargin" constant="-16" id="CIR-Q3-Lvw"/>
+                            <constraint firstItem="6Kr-KY-y3c" firstAttribute="top" secondItem="Kpd-nU-MYA" secondAttribute="bottom" constant="-3" id="Cdd-Cu-AyZ"/>
                             <constraint firstItem="BR2-Mc-2wu" firstAttribute="top" secondItem="IUD-es-5vv" secondAttribute="bottom" constant="4" id="I2M-wk-adz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kpd-nU-MYA" secondAttribute="trailing" constant="-16" id="KNf-h7-gmC"/>
+                            <constraint firstItem="Kpd-nU-MYA" firstAttribute="leading" secondItem="ceP-hS-K5R" secondAttribute="leadingMargin" constant="-16" id="KOd-cl-Lxo"/>
                             <constraint firstItem="HKd-e9-lfK" firstAttribute="top" secondItem="BR2-Mc-2wu" secondAttribute="bottom" constant="5" id="M0m-Y7-rEn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6Kr-KY-y3c" secondAttribute="trailing" constant="-16" id="O7f-D5-I5I"/>
                             <constraint firstItem="h2k-Yg-FuI" firstAttribute="top" secondItem="HVI-nc-9Q0" secondAttribute="bottom" id="TTe-ya-bRO"/>
                             <constraint firstItem="HVI-nc-9Q0" firstAttribute="top" secondItem="ogr-Zj-AZi" secondAttribute="bottom" constant="23" id="Tak-Ih-6Kz"/>
                             <constraint firstItem="HVI-nc-9Q0" firstAttribute="leading" secondItem="ceP-hS-K5R" secondAttribute="leadingMargin" constant="-16" id="YjF-jx-b8g"/>
                             <constraint firstItem="HKd-e9-lfK" firstAttribute="leading" secondItem="ceP-hS-K5R" secondAttribute="leadingMargin" constant="14" id="ZZA-1t-MbN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ogr-Zj-AZi" secondAttribute="trailing" constant="2" id="bOp-uD-26I"/>
+                            <constraint firstItem="6Kr-KY-y3c" firstAttribute="top" secondItem="9qc-er-hDV" secondAttribute="bottom" id="d2A-xI-QPR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HVI-nc-9Q0" secondAttribute="trailing" constant="-16" id="dQ8-Vi-0GV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1Se-qg-8K9" secondAttribute="trailing" constant="-16" id="le6-FZ-tI0"/>
                             <constraint firstItem="1Se-qg-8K9" firstAttribute="leading" secondItem="ceP-hS-K5R" secondAttribute="leadingMargin" constant="-16" id="mkZ-DJ-pOx"/>
@@ -212,7 +230,9 @@
                     <connections>
                         <outlet property="addressLabel" destination="m5N-pr-DVj" id="HTB-T0-7ow"/>
                         <outlet property="forestButton" destination="HKd-e9-lfK" id="gN6-Bk-ICk"/>
+                        <outlet property="modernSearchBar" destination="6Kr-KY-y3c" id="dlj-zE-7zW"/>
                         <outlet property="rootContainer" destination="1Se-qg-8K9" id="vCE-cs-6dO"/>
+                        <outlet property="topContainer" destination="Kpd-nU-MYA" id="Bgb-mf-XGt"/>
                         <outlet property="weatherButton" destination="IUD-es-5vv" id="6Wu-FP-IHI"/>
                         <outlet property="windButton" destination="BR2-Mc-2wu" id="m5h-hz-tbc"/>
                     </connections>
@@ -344,10 +364,10 @@
     <resources>
         <image name="bg" width="750" height="1334"/>
         <image name="current_location_icon" width="32" height="32"/>
-        <image name="forest_off_icon" width="24" height="24"/>
+        <image name="forest_off_icon" width="18" height="18"/>
         <image name="logo" width="310" height="330"/>
         <image name="rain_off_icon" width="24" height="24"/>
         <image name="search" width="11" height="11"/>
-        <image name="wind_on_icon" width="26" height="26"/>
+        <image name="wind_on_icon" width="18" height="18"/>
     </resources>
 </document>
