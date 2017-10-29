@@ -154,7 +154,7 @@ class MapViewController: UIViewController, WKScriptMessageHandler, ModernSearchB
     
     private func getLocationPoints(locationQuery: String) {
         let options = ForwardGeocodeOptions(query: locationQuery)
-        options.allowedScopes = [.address, .pointOfInterest]
+        //options.allowedScopes = [.address, .pointOfInterest]
         
         _ = geocoder.geocode(options) { (placemarks, attribution, error) in
             if ((placemarks?.first) == nil) {
