@@ -232,7 +232,6 @@ class MapViewController: UIViewController, WKScriptMessageHandler, ModernSearchB
                 let temperature = weatherData?.main?.temp
                 let humidity = weatherData?.main?.humidity
                 let modisJS = String(format:"addWildfireMessage(%2f,%2f,%@,%2f,%d)", latitude!, longitude!, brightness!, temperature!, humidity!)
-                print(modisJS)
                 self.mapWebView?.evaluateJavaScript(modisJS, completionHandler: nil)
             }
         }
