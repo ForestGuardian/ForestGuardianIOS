@@ -11,5 +11,6 @@ target 'Guardian Forestal' do
   pod 'SwiftLocation'
   pod 'MapboxGeocoder.swift', '~> 0.6'
   pod 'ModernSearchBar', :git => 'https://github.com/PhilippeBoisney/ModernSearchBar.git', :tag => '1.4'
+  pod "openweathermap-swift-sdk"
 
 end

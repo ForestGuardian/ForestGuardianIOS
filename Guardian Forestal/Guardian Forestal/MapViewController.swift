@@ -12,6 +12,7 @@ import SwiftLocation
 import CoreLocation
 import MapboxGeocoder
 import ModernSearchBar
+import openweathermap_swift_sdk
 
 class MapViewController: UIViewController, WKScriptMessageHandler, ModernSearchBarDelegate {
 
@@ -78,6 +79,8 @@ class MapViewController: UIViewController, WKScriptMessageHandler, ModernSearchB
         self.isCurrentLocationSet = false
         //self.currentLocation = CLLocation()
         self.geocoder = Geocoder(accessToken: "pk.eyJ1IjoibHVtdXJpbGxvIiwiYSI6IlVRTlZkbFkifQ.nFkWwVMJm_5mUy-9ye65Og")
+        // Init the weather map api
+        OpenWeatherMapClient.client(appID: "58287bee46d0b29681931fd98adfe0c5")
     }
 
     override func didReceiveMemoryWarning() {
@@ -202,7 +205,36 @@ class MapViewController: UIViewController, WKScriptMessageHandler, ModernSearchB
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if (message.name == "mobile") {
+            print("Message received from JavaScript")
             
+            let messageString: String = (message.body as? String)!
+            let data = messageString.data(using: .utf8)!
+            let json = try? JSONSerialization.jsonObject(with: data, options: [])
+            let dictionary = json as? [String: Any]
+            
+            let method = dictionary?["method"] as? String
+            if (method == "getMODISData") {
+                getMODISData(modis: dictionary?["data"])
+            }
+        }
+    }
+    
+    func getMODISData(modis: Any) {
+        let dictionary = modis as? [String: Any]
+        
+        let latitude = dictionary?["LATITUDE"] as? Double
+        let longitude = dictionary?["LONGITUDE"] as? Double
+        let brightness = dictionary?["BRIGHTNESS"] as? String
+        
+        OpenWeatherMapAPIClient.client.getWeather(coordinates: Coordinates(latitude: latitude!, longitude: longitude!)) { (weatherData, error) in
+            if error == nil && weatherData!.code == "200" {
+                //Data received
+                let temperature = weatherData?.main?.temp
+                let humidity = weatherData?.main?.humidity
+                let modisJS = String(format:"addWildfireMessage(%2f,%2f,%@,%2f,%d)", latitude!, longitude!, brightness!, temperature!, humidity!)
+                print(modisJS)
+                self.mapWebView?.evaluateJavaScript(modisJS, completionHandler: nil)
+            }
         }
     }
     
